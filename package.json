@@ -1,0 +1,20 @@
+{
+  "name": "azdev",
+  "version": "0.0.1",
+  "description": "Aztec Developers site",
+  "main": "gulpfile.js",
+  "author": "",
+  "license": "idk",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "express": "^4.14.0",
+    "font-awesome": "^4.7.0",
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^2.3.2",
+    "nodemon": "^1.11.0",
+    "sass": "^0.5.0"
+  }
+}
