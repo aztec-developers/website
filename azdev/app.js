@@ -1,24 +1,13 @@
-var express = require("express");
+'use strict';
+
+// simple express server
+var express = require('express');
 var app = express();
 var router = express.Router();
 
-app.use(router)
-app.use("/public", express.static("public"));
-
-router.all("/", function (req, res, next) {  
-
-  res.send("<!DOCTYPE html>" +
-            "<html>" +
-            "<head>" +
-                "<title>Aztec Developers</title>" +
-                "<link rel=\"stylesheet\" type=\"text/css\" href=\"public/style.css\">" +
-            "</head>" +
-            "<body>" +
-            "<p>Hello World</p>" +
-            "</body>" +
-            "</html>")
+app.use(express.static('public'));
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/public/index.html');
 });
 
-app.listen(3000, function () {
-  console.log("Starting up app...");
-});
+app.listen(1338);
