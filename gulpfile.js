@@ -12,8 +12,8 @@ const APP_DIR = path.resolve(__dirname, "azdev/");
 const file_match = "**/*.*";
 const paths = {
 	"static":path.join(APP_DIR,"static/"),
+	"static":path.join(APP_DIR,"static/js/",file_match),
 	"css": path.join(APP_DIR, "static/css/"),
-	"js": path.join(APP_DIR,"js/",file_match),
 	"scss": path.join(APP_DIR, "scss/",file_match),
 	"routes": path.join(APP_DIR, "public/",file_match),
 	"app": path.join(APP_DIR, "app.js")
@@ -36,23 +36,10 @@ gulp.task("sass", function() {
 		.pipe(browserSync.stream());
 });
 
-
-gulp.task("browserify", function() {
-    gulp.src(paths["js"])
-        .pipe(browserify({
-          insertGlobals : true
-        }))
-        .pipe(gulp.dest(path.join(paths["static"],"js/")))
-        .pipe(browserSync.stream());
-});
-
-
-
-
 gulp.task("browser-sync", ["nodemon"], function() {
 	browserSync.init(null, {
 		proxy: net["hostname"] + ":" + net["proxyPort"],
-		files: [paths["routes"]],
+		files: [paths["routes"],paths["js"]],
 		browser: net["browser"],
 		port: net["port"],
 		notify:false
@@ -67,6 +54,5 @@ gulp.task("nodemon", function(cb) {
 
 
 gulp.task("default", ["sass","browser-sync"], function() {
-	gulp.watch(paths["js"],["browserify"]);
 	gulp.watch(paths["scss"],["sass"]);
 });
