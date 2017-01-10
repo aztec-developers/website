@@ -12,7 +12,7 @@
 </head>
 
 <body>
-	<div id="nav-bar">
+<!-- 	<div id="nav-bar">
 		<div id="left-nav">
 			<div id="logo">
 				<span class="nav-item"><img id="logo" src="images/ad_logo.png"></span></span>
@@ -24,20 +24,24 @@
 			</a>
 			<span class="nav-item" id="events-button">Events</span>
 		</div>
-	</div>
+	</div> -->
 	<div id="container">
 		<div class="section" id="home">
 			<ul id="main-scene">
-			  <li class="layer bg-layer" data-depth=".25"><img id="az" src="images/ad_layer1.png"></li>
-			  <li class="layer fg-layer" data-depth="0.35"><img id="dev" src="images/ad_layer2.png"></li>
-			  <li class="layer fg-layer" data-depth="0.40"><img id="dev" src="images/ad_layer3.png"></li>
-			  <li class="layer fg-layer" data-depth="0.42"><img id="dev" src="images/ad_layer4.png"></li>
+			  <li class="layer" data-depth=".25"><img id="bg-layer" src="images/ad_layer1.png"></li>
+			  <li class="layer fg-layer" data-depth="0.35"><img src="images/ad_layer2.png"></li>
+			  <li class="layer fg-layer" data-depth="0.40"><img src="images/ad_layer3.png"></li>
+			  <li class="layer fg-layer" data-depth="0.32"><img src="images/ad_layer4.png"></li>
 			</ul>
 			<ul id="sub-scene">
-			  <li class="layer" data-depth=".35">
+			  <li class="layer" data-depth=".25">
 			  	<div id="subtitle">Aztec Developers</div>
 			  </li>
 			</ul>
+			<div id="home-info">
+				<div class="home-info-section">
+				</div>
+			</div>
 		</div>
 		<div class="section" id="about"></div>
 		<div class="section" id="events"></div>
@@ -46,6 +50,7 @@
 	</div>
 	<script src="js/components/parallax/deploy/parallax.js"></script>
 	<script src="js/main.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,900,700" rel="stylesheet"> 
 	<!-- Browsersync -->
 	<script id="__bs_script__">
 	//<![CDATA[
