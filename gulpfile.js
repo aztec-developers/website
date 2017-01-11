@@ -6,13 +6,12 @@ var sass = require("gulp-sass");
 var nodemon = require("gulp-nodemon");
 var browserSync = require("browser-sync");
 var path = require("path");
-var browserify = require('gulp-browserify');
 
 const APP_DIR = path.resolve(__dirname, "azdev/");
 const file_match = "**/*.*";
 const paths = {
 	"static":path.join(APP_DIR,"static/"),
-	"static":path.join(APP_DIR,"static/js/",file_match),
+	"js":path.join(APP_DIR,"static/js/",file_match),
 	"css": path.join(APP_DIR, "static/css/"),
 	"scss": path.join(APP_DIR, "scss/",file_match),
 	"routes": path.join(APP_DIR, "public/",file_match),
