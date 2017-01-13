@@ -25,11 +25,19 @@ const net = {
 	"browser": "firefox"
 }
 
+// gulp.task('sass', function() {
+// 	return gulp.src('app/scss/**/*.scss')
+// 	.pipe(sass().on("error", notify.onError()))
+// 	.pipe(rename({suffix: '.min', prefix : ''}))
+// 	.pipe(autoprefixer(['last 15 versions']))
+// 	.pipe(cleanCSS())
+// 	.pipe(gulp.dest('app/css'))
+// 	.pipe(browserSync.reload({stream: true}));
+// });
 
 /* sass file compilation into one file from nested directories */
 gulp.task("sass", function() {
 	return gulp.src(paths["scss"])
-		.pipe(concat("main.scss"))
 		.pipe(sass().on("error", sass.logError))
 		.pipe(gulp.dest(paths["css"]))
 		.pipe(browserSync.stream());
