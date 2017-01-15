@@ -1,11 +1,5 @@
-$fa-font-path:"../components/font-awesome/fonts/";
-@import "../../node_modules/font-awesome/scss/font-awesome";
+@import "_libs";
 @import "_vars";
-
-.icon-user {
-  @extend .fa;
-  @extend .fa-user;
-}
 
 html {
     box-sizing: border-box;
@@ -22,49 +16,24 @@ a {
     color: inherit;
 }
 
+.no-select{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor:pointer;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: $light-gray;
+    background-color: $foreground;
     width: 100%;
     height: 100%;
     font-family: "Roboto";
     font-weight: 400;
-}
-
-#icon-header{
-    text-align:center;
-    width:100%;
-    height:100%; 
-}
-
-
-#nav-bar {
-    top: 0%;
-    width: 100%;
-    background-color: $foreground;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-}
-#left-nav {
-    width: 70%;
-    display: flex;
-}
-
-#right-nav {
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.nav-item {
-    margin: auto;
-    display: inline-block;
-    font-family: helvetica;
-    text-decoration: none;
-    color: #000;
 }
 
 #container {
@@ -73,15 +42,17 @@ body {
     overflow: scroll;
 }
 
-#summary{
-    margin-top:2%;
-
+#main-scene{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    margin: 0;
+    padding: 0;
 }
-
-.vert-item{
-    margin:2% auto;
-}
-
 
 .section {
     height: 100%;
@@ -89,75 +60,93 @@ body {
 }
 
 #home {
-    background: $dark-gray;
-    color: $foreground;
+    background: $foreground;
+    color: $dark-gray;
     display: flex;
+    font-family: "roboto";
     flex-direction: column;
-    text-align: center;
     justify-content: center;
     align-items:center;
-    width:100%;
+    font-size:72px;
+}
+.layer{
+    position:relative !important;
+    display:inline-block !important;
 }
 
 #title{
-    width:100%;
-    text-transform:uppercase;
-    letter-spacing: .4em;
-    font-family: "Roboto";
-    font-size: 1.8em;
-    font-weight:300;
-    margin:0 auto;
-    height:300px;
-}
-#home-menu{
-    height:300px;
-    width:100%;
-    margin: 0 auto;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    text-align:center;
-
-}
-
-.home-button{
-    text-transform:uppercase;
-    letter-spacing: .02em;
-    font-family: "Roboto";
-    font-weight:300;
-    font-size:2em;
-    border: 1px solid $foreground;
-    padding:2.5% 5%;
-    margin:auto 5%;
-}
-
-.sub-title{
-    margin-top:1%;
-    letter-spacing: .35em;
-    font-family: "Roboto";
-    font-size: .75em;
+    @extend .no-select;
+    text-transform:lowercase;
+    font-size:1.5em;
+    color:$dark-gray;
     font-weight:400;
+}
+
+#title-sub{
+    @extend .no-select;
+    text-transform:lowercase;
+    font-size:.5em;
+}
+
+.title-side{
+    @extend .no-select;
+    font-weight:700;
+    font-size:1.5em;
+    color:$hot-pink;
+}
+
+.nav-title-side{
+    @extend .no-select;
+    font-weight:700;
+    font-size:1.5em;
+    color:$hot-pink;
+}
+
+.nav{
+    background-color:$foreground;
+}
+
+#nav-left{
+    color:#000;
+    width:30%;
+}
+
+#nav-right{
+    color:#000;
+    width:70%;
+    display:flex;
+    justify-content: space-between;
+}
+#nav-menu{
+    margin-left:auto;
+}
+
+.menu-button{
+    @extend .no-select;
+    color:$hot-pink;
+    font-family:"roboto";
+    text-transform:uppercase;
+}
+
+.menu-button-text{
+    color:$dark-gray;
+}
+
+#nav-title{
+    text-transform:lowercase;
+    font-size:1.5em;
+    color:$light-gray;
+    font-weight:400;
+
 }
 
 .layer {
     opacity: .92;
 }
 
-.fg-layer {
-    cursor: pointer;
-}
-
-.divider {
-    width: 100%;
-    height: 2px;
-    margin: 2px;
-    background-color: $foreground;
-}
-
 ul {
     list-style-type: none;
     list-style: none;
-    padding: 0;
 }
 
 li {
@@ -166,7 +155,7 @@ li {
 }
 
 #about {
-    background: $light-red;
+    background: $hot-pink;
 }
 
 #events {

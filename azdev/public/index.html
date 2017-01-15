@@ -6,38 +6,45 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Aztec Developers</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/main.css">
+    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
+    </script>
+    <!-- 2. Use an HTML Import to bring in some elements. -->
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-input/paper-input.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
 </head>
 
 <body>
-    <!-- 	<div id="nav-bar">
-		<div id="left-nav">
-			<div id="logo">
-				<span class="nav-item"><img id="logo" src="images/ad_logo.png"></span></span>
-			</div>
-		</div>
-		<div id="right-nav">
-			<a href="#about">
-				<span class="nav-item" id="about-button">About</span>
-			</a>
-			<span class="nav-item" id="events-button">Events</span>
-		</div>
-	</div> -->
+    <div id="nav-bar">
+        <paper-toolbar class="nav">
+            <div id="nav-left">
+            <span class="nav-title-side">{</span><span id="nav-title">azdev</span><span class="nav-title-side">}</span>
+            </div>
+            <div id="nav-right">
+                <div id="nav-menu">
+                    <paper-button class="menu-button"><span class="menu-button-text">About</span></paper-button>
+                    <paper-button class="menu-button"><span class="menu-button-text">Events</span></paper-button>
+                    <paper-button class="menu-button"><span class="menu-button-text">Join</span></paper-button>
+                </div>
+            </div>
+        </paper-toolbar>
+    </div>
     <div id="container">
-        <div class="section" id="home">
+        <div class="section fullbleed layout vertical" id="home">
             <ul id="main-scene">
-                <li class="layer" data-depth=".25">
-                    <div id="title">
-                        Aztec Developers
-                    </div>
-                </li>
-                <li class="layer" data-depth=".45">
-                    <div id="home-menu">
-	                    <span class="home-button">Contact</span>
-                        <span class="home-button">About</span>
-                        <span class="home-button">Events</span>
-                    </div>
+                <li class="layer" data-depth=".20"><span class="title-side">{</span><span id="title">azdev</span><span class="title-side">}</span></li>
+                <li class="layer" id="title-sub" data-depth=".17">aztec developers</li>
+                <li class="layer" id="title-sub" data-depth=".26">
+                    <paper-icon-button icon="expand-more"></paper-icon-button>
                 </li>
             </ul>
         </div>
@@ -46,9 +53,21 @@
         <div class="quater-section" id="footer">
         </div>
     </div>
-    <script src="components/parallax/deploy/parallax.js"></script>
+    <script src="bower_components/parallax/deploy/parallax.js"></script>
     <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <script>
+    // To ensure that elements are ready on polyfilled browsers, 
+    // wait for WebComponentsReady. 
+    document.addEventListener('WebComponentsReady', function() {
+        var input = document.querySelector('paper-input');
+        var button = document.querySelector('paper-button');
+        var greeting = document.getElementById("greeting");
+        button.addEventListener('click', function() {
+            greeting.textContent = 'Hello, ' + input.value;
+        });
+    });
+    </script>
     <!-- Browsersync -->
     <script id="__bs_script__">
     //<![CDATA[

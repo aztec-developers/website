@@ -1,18 +1,19 @@
 "use strict";
 
 var gulp = require("gulp");
-var concat = require("gulp-concat");
-var sass = require("gulp-sass");
 var nodemon = require("gulp-nodemon");
 var browserSync = require("browser-sync");
 var path = require("path");
+var sass = require("gulp-sass");
 
 const APP_DIR = path.resolve(__dirname, "azdev/");
+const STATIC_DIR = path.join(APP_DIR,"static/")
 const file_match = "**/*.*";
 const paths = {
-	"static":path.join(APP_DIR,"static/"),
-	"js":path.join(APP_DIR,"static/js/",file_match),
-	"css": path.join(APP_DIR, "static/css/"),
+	"static":STATIC_DIR,
+	"js":path.join(STATIC_DIR,"js/",file_match),
+	"css": path.join(STATIC_DIR, "css/"),
+	"images":path.join(STATIC_DIR, "images/"),
 	"scss": path.join(APP_DIR, "scss/",file_match),
 	"routes": path.join(APP_DIR, "public/",file_match),
 	"app": path.join(APP_DIR, "app.js")
@@ -22,23 +23,17 @@ const net = {
 	"hostname": "http://localhost",
 	"port": "1337",
 	"proxyPort": "1338",
-	"browser": "firefox"
+	"browser": "google chrome"
 }
 
-// gulp.task('sass', function() {
-// 	return gulp.src('app/scss/**/*.scss')
-// 	.pipe(sass().on("error", notify.onError()))
-// 	.pipe(rename({suffix: '.min', prefix : ''}))
-// 	.pipe(autoprefixer(['last 15 versions']))
-// 	.pipe(cleanCSS())
-// 	.pipe(gulp.dest('app/css'))
-// 	.pipe(browserSync.reload({stream: true}));
-// });
-
-/* sass file compilation into one file from nested directories */
-gulp.task("sass", function() {
+/* sass/compass file compilation into one file from nested directories */
+gulp.task("styles", function() {
 	return gulp.src(paths["scss"])
-		.pipe(sass().on("error", sass.logError))
+		.pipe(sass({
+		    outputStyle: "compressed",
+		    includePaths: ["node_modules/susy/sass","node_modules/normalize-scss/sass"]
+		})
+		.on("error", sass.logError))
 		.pipe(gulp.dest(paths["css"]))
 		.pipe(browserSync.stream());
 });
@@ -60,6 +55,6 @@ gulp.task("nodemon", function(cb) {
 });
 
 
-gulp.task("default", ["sass","browser-sync"], function() {
-	gulp.watch(paths["scss"],["sass"]);
+gulp.task("default", ["styles","browser-sync"], function() {
+	gulp.watch(paths["scss"],["styles"]);
 });
