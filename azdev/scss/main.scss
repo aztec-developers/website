@@ -37,6 +37,7 @@ body {
     font-size:16px;
     color:$foreground;
     font-family:"roboto";
+    overflow:hidden;
 }
 
 #container {
@@ -45,103 +46,76 @@ body {
     overflow: scroll;
 }
 
-#main-scene{
-    width:100%;
-    height:100%;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    text-align:center;
-    flex-direction:column;
-    margin: 0;
-    padding: 0;
-}
-
 .section {
     min-height: 100%;
     width: 100%;
-}
-
-#home {
-    background: $foreground;
     color: $dark-gray;
     display: flex;
     font-family: "roboto";
     flex-direction: column;
     justify-content: center;
     align-items:center;
-    font-size:72px;
 }
 .layer{
     position:relative !important;
     display:inline-block !important;
 }
 
-#title{
-    @extend .no-select;
-    text-transform:lowercase;
-    font-size:1.5em;
-    color:$dark-gray;
-    font-weight:400;
+#main-title{
+    font-size:5em;
+    font-weight:900;
 }
 
-#title-sub{
-    @extend .no-select;
-    text-transform:lowercase;
-    font-size:.5em;
-}
-
-.title-side{
-    @extend .no-select;
-    font-weight:700;
-    font-size:1.5em;
-    color:$hot-pink;
+#main-sub-title{
+    font-size:2em;
+    font-style:italic;
+    font-weight:300;
+    width:50%;
 }
 
 .nav-title-side{
-    @extend .no-select;
-    font-weight:700;
-    font-size:1.5em;
+    color:$hot-pink;
+    font-size:1.7em;
+}
+
+#nav-title{
+    text-transform:lowercase;
+    color:$dark-gray;
+    font-weight:400;
+    font-size:1.7em;
+}
+
+.menu-button{
+    margin:0;
+    height:100%;
+    border-radius:0;
     color:$hot-pink;
 }
 
-
-
-#nav{
-    background-color:$foreground;
+.nav-button-text{
+    color:$dark-gray;
 }
 
-#nav-left{
-    color:#000;
+#title{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color:$hot-pink;
+}
+
+#nav{
+    color:$dark-gray;
+    background-color:$foreground;
+    font-size:1.2em;
 }
 
 #nav-right{
-    color:#000;
     display:flex;
     justify-content: space-between;
     width:100%;
 }
 #nav-menu{
     margin-left:auto;
-}
-
-.menu-button{
-    @extend .no-select;
-    color:$hot-pink;
-    font-family:"roboto";
-    text-transform:uppercase;
-}
-
-.menu-button-text{
-    color:$dark-gray;
-}
-
-#nav-title{
-    text-transform:lowercase;
-    font-size:1.5em;
-    color:$light-gray;
-    font-weight:400;
-
 }
 
 .layer {
@@ -156,59 +130,6 @@ ul {
 li {
     list-style-type: none;
     list-style: none;
-}
-
-.content{
-    display:flex;
-    justify-content: flex-start;
-    align-items:center;
-    flex-direction:column;
-    width:100%;
-    height:100%;
-    padding:5% 1%;
-    text-align:left;
-}
-
-.content-box{
-    display:flex;
-    justify-content: center;
-    align-items:center;
-}
-
-.content-header{
-    width:100%;
-    font-size:3.8em;
-    margin:1%;
-}
-
-.small-content-header{
-    width:100%;
-    font-size:2.5em;
-}
-
-@media (max-width: 750px){
-    .content-header{
-        font-size:2.4em;
-    }
-    .small-content-header{
-        font-size:1.4em;
-    }
-}
-
-@media (max-width: 500px){
-    .content-box{
-        flex-wrap:wrap;
-    }
-}
-
-.big-content-box{
-    flex-grow:3;
-    margin:1%;
-}
-
-.small-content-box{
-    flex-grow:1;
-    margin:1%;
 }
 
 #about {
@@ -230,7 +151,39 @@ li {
 }
 
 #footer {
-    background-color: $dark-gray;
+    background-color: $hot-pink;
 }
 
 
+#main-button-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin:2%;
+}
+
+.main-button{
+    width:50%;
+    font-size:1.2em;
+    background-color:$hot-pink;
+    color:#fff;
+    margin:2%;
+}
+
+
+#main-scene{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    text-align:center;
+    flex-direction:column;
+    margin: 0;
+    padding: 0;
+}
+
+.quater-section{
+    height:25%;
+}
