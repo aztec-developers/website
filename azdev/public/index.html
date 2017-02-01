@@ -5,38 +5,52 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Aztec Developers</title>
-    <meta name="description" content="">
+    <meta name="description" content="Aztec Developers, also known as AzDev, is a software development club at San Diego State University.">
+    <meta name="keywords" content="Aztec Developers, AzDev, SDSU Developers, SDSU azdev, SDSU Computer Science, Computer Science Club SDSU, SDSU club, SDSU software development">
+    <!-- Favicons for days -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="images/manifest.json">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#ba1538">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="msapplication-config" content="images/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="css/main.css">
-    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
-    <!-- 2. Use an HTML Import to bring in some elements. -->
-    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-    <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/paper-input/paper-input.html">
-    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
-    <link rel="import" href="bower_components/paper-ripple/paper-ripple.html">
-    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
-    <link rel="import" href="bower_components/paper-menu/paper-menu.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/paper-card/paper-card.html">
+
+    <style is="custom-style">
+        :root {
+            --paper-tabs-selection-bar-color: #ba1538;
+            --paper-tab-ink:#ccc;
+        }
+    </style>
 </head>
 
 <body>
-<!--     <paper-toolbar id="nav">
-        <paper-button id="title">
-            <span class="nav-title-side">{</span><span class="nav-button-text" id="nav-title">azdev</span><span class="nav-title-side">}</span>
-        </paper-button>
-        <paper-button class="menu-button"><span class="nav-button-text">About</span></paper-button>
-        <paper-button class="menu-button"><span class="nav-button-text">Events</span></paper-button>
-        <paper-button class="menu-button"><span class="nav-button-text">Join</span></paper-button>
-    </paper-toolbar> -->
+    <paper-toolbar id="nav-bar">
+        <div class="title" id="nav-title"><img id="nav-logo" src="images/azdev-logo-small.png"/></div>
+        <paper-tabs selected="0">
+            <paper-tab>Home</paper-tab>
+            <paper-tab>About</paper-tab>
+            <paper-tab>Events</paper-tab>
+            <paper-tab>Contact</paper-tab>
+            <paper-tab>Join</paper-tab>
+        </paper-tabs>
+    </paper-toolbar>
     <div id="container">
         <div class="section" id="home">
             <ul id="main-scene">
-                <li class="layer" id="main-title" data-depth=".10">Aztec Developers</li>
-                <li class="layer" id="main-sub-title" data-depth=".10">Learn the stuff your professor didn't teach you.</li>
+                <li class="layer" id="main-title" data-depth=".10">lorem ipsum</li>
+                <li class="layer" id="main-sub-title" data-depth=".10">lorem ipsum epsum ahskl</li>
                 <li class="layer" data-depth=".11">
                     <div id="main-button-container">
                         <paper-button class="main-button">About</paper-button>
@@ -44,30 +58,22 @@
                     </div>
                 </li>
             </ul>
+            <ul id="content-scene">
+                <li class="layer" data-depth=".10" id="home-title">Learn by creating the world around you.</li>
+                <li class="layer" data-depth=".10" id="home-description">
+               Aztec Developers is about giving students a taste of programming in the real world. We give club members a project to work on that is decided amongst the majority of the student while also giving students the freedom to decide on the parts of projects that they feel would fit best with them.</li>
+            </ul>
         </div>
-        <div class="section" id="content">
-            
+        <div class="section" id="events">
+        </div>
+        <div class="section" id="about">
         </div>
         <div class="quater-section content-section" id="footer">
         </div>
     </div>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="bower_components/parallax/deploy/parallax.js"></script>
     <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
-    <script>
-    // To ensure that elements are ready on polyfilled browsers, 
-    // wait for WebComponentsReady. 
-    document.addEventListener('WebComponentsReady', function() {
-        var input = document.querySelector('paper-input');
-        var button = document.querySelector('paper-button');
-        var greeting = document.getElementById("greeting");
-        button.addEventListener('click', function() {
-            greeting.textContent = 'Hello, ' + input.value;
-        });
-    });
-    </script>
     <!-- Browsersync -->
     <script id="__bs_script__">
     //<![CDATA[
