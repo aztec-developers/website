@@ -50,9 +50,12 @@ body {
     margin-left:0;
 }
 
-#home-title{
-    font-size:1.75em;
+.home-title{
+    font-size:1.25em;
     font-weight:900;
+    color:$red;
+    margin-top:2%;
+    margin-bottom:1%;
 }
 
 #container {
@@ -62,14 +65,18 @@ body {
 }
 
 .section {
-    min-height: 70%;
+    min-height: 100%;
     width: 100%;
     color: $dark-gray;
     display: flex;
     font-family: "roboto";
     flex-direction: column;
-    justify-content: center;
     align-items:center;
+    padding:2%;
+}
+
+.section-box{
+
 }
 
 .layer{
@@ -77,16 +84,14 @@ body {
     display:inline-block !important;
 }
 
-#main-title{
-    font-size:5em;
-    font-weight:900;
+#main-logo{
+    width:85%;
 }
 
-#main-sub-title{
+.main-sub-title{
     font-size:2em;
     font-style:italic;
     font-weight:300;
-    width:50%;
 }
 
 .layer {
@@ -115,18 +120,21 @@ li {
 
 #home{
     background-color: $foreground;
+    justify-content: center;
     flex-direction:row;
+    flex-wrap:wrap;
     height:100%;
     width:100%;
+    padding:2%;
 }
 
 #content-scene{
     display:flex;
     justify-content: center;
-    align-items:center;
     text-align:center;
     flex-direction:column;
     width:50%;
+    height:100%;
 }
 
 #main-scene{
@@ -135,7 +143,7 @@ li {
     align-items:center;
     text-align:center;
     flex-direction:column;
-    margin: 0;
+    width:50%;
     padding: 0;
 }
 
@@ -174,4 +182,22 @@ li {
 
 #footer {
     background-color: $red;
+}
+
+#home-description {
+    padding: 5%;
+}
+
+.officer-button{
+    color:$teal;
+}
+
+.officer-title{
+    color:#757575;
+}
+
+.officer-description{
+    margin-top:4%;
+    font-size:.85em;
+    text-indent:10px;
 }

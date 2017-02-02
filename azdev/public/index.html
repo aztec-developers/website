@@ -21,56 +21,47 @@
     <link href="css/main.css" rel="stylesheet">
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <link rel="import" href="bower_components/paper-tabs/paper-tab.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="bower_components/paper-card/paper-card.html">
-
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animations.html">
     <style is="custom-style">
-        :root {
-            --paper-tabs-selection-bar-color: #ba1538;
-            --paper-tab-ink:#ccc;
-        }
+    :root {
+        --paper-tabs-selection-bar-color: #ba1538;
+        --paper-tab-ink: #ccc;
+    }
+    
+    paper-card {
+        width: 250px;
+    }
     </style>
 </head>
+<script>
+function switchPage(selectedNum) {
+    document.querySelector('#pages').selected = selectedNum;
+}
+</script>
 
-<body>
+<body class="fullbleed">
+   
     <paper-toolbar id="nav-bar">
-        <div class="title" id="nav-title"><img id="nav-logo" src="images/azdev-logo-small.png"/></div>
+        <div class="title" id="nav-title"></div>
         <paper-tabs selected="0">
-            <paper-tab>Home</paper-tab>
-            <paper-tab>About</paper-tab>
-            <paper-tab>Events</paper-tab>
-            <paper-tab>Contact</paper-tab>
-            <paper-tab>Join</paper-tab>
+            <paper-tab onClick="switchPage(0)">Home</paper-tab>
+            <paper-tab onClick="switchPage(1)">About</paper-tab>
+            <paper-tab onClick="switchPage(2)">Join</paper-tab>
         </paper-tabs>
     </paper-toolbar>
-    <div id="container">
-        <div class="section" id="home">
-            <ul id="main-scene">
-                <li class="layer" id="main-title" data-depth=".10">lorem ipsum</li>
-                <li class="layer" id="main-sub-title" data-depth=".10">lorem ipsum epsum ahskl</li>
-                <li class="layer" data-depth=".11">
-                    <div id="main-button-container">
-                        <paper-button class="main-button">About</paper-button>
-                        <paper-button class="main-button">Join</paper-button>
-                    </div>
-                </li>
-            </ul>
-            <ul id="content-scene">
-                <li class="layer" data-depth=".10" id="home-title">Learn by creating the world around you.</li>
-                <li class="layer" data-depth=".10" id="home-description">
-               Aztec Developers is about giving students a taste of programming in the real world. We give club members a project to work on that is decided amongst the majority of the student while also giving students the freedom to decide on the parts of projects that they feel would fit best with them.</li>
-            </ul>
-        </div>
-        <div class="section" id="events">
-        </div>
-        <div class="section" id="about">
-        </div>
-        <div class="quater-section content-section" id="footer">
-        </div>
-    </div>
+    <neon-animated-pages id="pages" class="flex" selected="0" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
+        <neon-animatable>home</neon-animatable>
+        <neon-animatable>about</neon-animatable>
+        <neon-animatable>join</neon-animatable>
+    </neon-animated-pages>
     <script src="bower_components/parallax/deploy/parallax.js"></script>
     <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
