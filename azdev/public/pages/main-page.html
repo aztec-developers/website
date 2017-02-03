@@ -1,0 +1,89 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+	<link rel="import" href="../bower_components/polymer/polymer.html">
+	<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+	<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+	<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="about-page.html">
+<link rel="import" href="officer-page.html">
+
+<dom-module id="main-page">
+  <template>
+  
+    <style is="custom-style">
+      paper-tab[link] a {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-center);
+        color: black;
+        text-decoration: none;
+      }
+  
+      paper-tab.iron-selected[link] a {
+        color: white;
+      }
+
+      paper-tab .tab-content > a {
+          height: auto;
+      }
+    </style>
+   </head>
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+
+    	<paper-toolbar id="nav-bar">
+        		<div class="title" id="nav-title"></div>
+        		<paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+        				<paper-tab name="about-page" link><a href="/about-page">About</a></paper-tab>
+        				<paper-tab name="officer-page" link><a href="/officer-page">Officers</a></paper-tab>
+        		</paper-tabs>
+        </paper-toolbar>
+
+		<neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
+			<about-page name="about-page"></about-page>
+			<officer-page name="officer-page"></officer-page>
+		</neon-animated-pages>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'main-page',
+
+      properties: {
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged',
+        },
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)',
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'about-page';
+      },
+
+      _pageChanged: function(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl(page + '.html');
+        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
+
+      _showPage404: function() {
+        this.page = 'view404';
+      },
+    });
+  </script>
+</dom-module>

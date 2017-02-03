@@ -10,7 +10,7 @@ app.use(express.static(__dirname + '/static'));
 app.use(express.static(__dirname + '/public'));
 
 // return index.html for all other routes
-app.get('/', function(req, res) {
+app.get('*', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
