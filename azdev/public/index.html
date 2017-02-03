@@ -19,7 +19,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="css/main.css" rel="stylesheet">
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="bower_components/polymer/polymer.html">
     <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
@@ -30,6 +30,7 @@
     <link rel="import" href="bower_components/paper-card/paper-card.html">
     <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
     <link rel="import" href="bower_components/neon-animation/neon-animations.html">
+    <link rel="import" href="bower_components/app-router/app-router.html">
     <style is="custom-style">
     :root {
         --paper-tabs-selection-bar-color: #ba1538;
@@ -46,22 +47,15 @@ function switchPage(selectedNum) {
     document.querySelector('#pages').selected = selectedNum;
 }
 </script>
-
-<body class="fullbleed">
-   
-    <paper-toolbar id="nav-bar">
-        <div class="title" id="nav-title"></div>
-        <paper-tabs selected="0">
-            <paper-tab onClick="switchPage(0)">Home</paper-tab>
-            <paper-tab onClick="switchPage(1)">About</paper-tab>
-            <paper-tab onClick="switchPage(2)">Join</paper-tab>
-        </paper-tabs>
-    </paper-toolbar>
-    <neon-animated-pages id="pages" class="flex" selected="0" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
+<body unresolved>
+<app-router>
+  <app-route path="/" import="pages/about-page.html"></app-route>
+</app-router>
+<!--     <neon-animated-pages id="pages" class="flex" selected="0" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
         <neon-animatable>home</neon-animatable>
         <neon-animatable>about</neon-animatable>
         <neon-animatable>join</neon-animatable>
-    </neon-animated-pages>
+    </neon-animated-pages> -->
     <script src="bower_components/parallax/deploy/parallax.js"></script>
     <script src="js/main.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
