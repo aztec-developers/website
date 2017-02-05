@@ -5,9 +5,7 @@
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
-<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
-<link rel="import" href="../parts/login-portal.html">
-<dom-module id="join-page">
+<dom-module id="project-page">
     <template>
         <style is="custom-style">
         #home {
@@ -74,17 +72,18 @@
         }
         </style>
         <div class="section" id="home">
-            <firebase-app id="firebase" auth-domain="azdev-828bd.firebaseapp.com" database-url="https://azdev-828bd.firebaseio.com" api-key="AIzaSyBCuOvRRj7L7TCD-WH1FG1dJeXvIOENcEE"></firebase-app>
             <paper-material class="section-item big-card" elevation="1" animated-shadow="false">
                 <div class="card-content">
-                    <login-portal></login-portal>
+                    <h2>Portal Plus</h2>
+                    <h3>AzDev Project focused on improving SDSU's WebPortal</h3>
+                    <p>At San Diego State University we are given two options to plan our class schedules, either through the MyMap, which gives a few generic overview, or through Degree Evaluation, which can be hard to read and isn't interactive. </p><p>We want to improve the course planning experience here at SDSU which is why AzDev's first project is to create a one stop portal to plan your courses that's easy to use, easy to read, and extremely personalized. PortalPlus is just that, it allows customization, it’s personalized and catered to the individual, which is ultimately what a planner should be.</p>
                 </div>
             </paper-material>
         </div>
     </template>
     <script>
     Polymer({
-        is: 'join-page',
+        is: 'project-page',
     });
     </script>
 </dom-module>

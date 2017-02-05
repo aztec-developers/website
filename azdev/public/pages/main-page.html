@@ -12,7 +12,7 @@
 <link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="join-page.html">
+<link rel="import" href="project-page.html">
 <link rel="import" href="home-page.html">
 
 <dom-module id="main-page">
@@ -60,12 +60,12 @@
             <div class="title" id="nav-title">Aztec Developers</div>
             <paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
 	            <paper-tab name="home-page" link><a href="/home-page">Home</a></paper-tab>
-                <paper-tab name="join-page" link><a href="/join-page">Join</a></paper-tab>
+                <paper-tab name="project-page" link><a href="/project-page">Projects</a></paper-tab>
             </paper-tabs>
         </paper-toolbar>
         <neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
 	        <home-page name="home-page"></home-page>
-            <join-page name="join-page"></join-page>
+            <project-page name="project-page"></project-page>
         </neon-animated-pages>
     </template>
     <script>
