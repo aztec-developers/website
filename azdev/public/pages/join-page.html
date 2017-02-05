@@ -5,7 +5,8 @@
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
-
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../parts/login-portal.html">
 <dom-module id="join-page">
     <template>
         <style is="custom-style">
@@ -14,12 +15,12 @@
             font-family: "roboto";
             color: #070707;
             width: 100%;
-            min-height:90vh;
+            min-height: 90vh;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            padding-bottom:7.5%;
+            padding-bottom: 7.5%;
         }
         
         a {
@@ -52,34 +53,31 @@
         .section-item {
             margin: 2.5% 2.5%;
         }
-
+        
         #footer {
             height: 25vh;
             width: 100%;
             background-color: #454545;
-            display:flex;
+            display: flex;
             flex-direction: column;
-            padding:2%;
+            padding: 2%;
             align-items: center;
-            color:#fafafa;
+            color: #fafafa;
         }
-
-        .small-text{
-            font-size:.6em;
+        
+        .small-text {
+            font-size: .6em;
         }
-        .footer-section{
-            margin:.5%;
+        
+        .footer-section {
+            margin: .5%;
         }
-
         </style>
         <div class="section" id="home">
+            <firebase-app id="firebase" auth-domain="azdev-828bd.firebaseapp.com" database-url="https://azdev-828bd.firebaseio.com" api-key="AIzaSyBCuOvRRj7L7TCD-WH1FG1dJeXvIOENcEE"></firebase-app>
             <paper-material class="section-item big-card" elevation="1" animated-shadow="false">
                 <div class="card-content">
-                    <h2>AzDev</h2>
-                    <h3>Software development club at San Diego State University.</h3>
-                    <p>Aztec Developers gives students a taste of software development in the real world. We give club members a project to work on that is decided amongst the majority of the student while also giving students the freedom to decide on the parts of projects that they feel would fit best with them. </p>
-                    <p>Club members are encouraged to and often meet outside of club time in order to further work on projects, by doing this, club members not only get feedback from each other but also strengthen relationships with one another.</p>
-                    <p> The purpose of Aztec Developers is to give students the opportunity to collaborate with others in order to create a project that is bigger than any individual, by doing this we’re able to learn team building skills that can occur at a place of work, or just have fun while also learning new skills in programming and design.</p>
+                    <login-portal></login-portal>
                 </div>
             </paper-material>
         </div>

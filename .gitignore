@@ -67,3 +67,12 @@ jspm_packages
 /test/sample
 !/test/sample/bower.json
 /npm-shrinkwrap.json
+/.vscode
+node_modules
+/coverage
+firebase-debug.log
+npm-debug.log
+
+.DS_Store
+.idea
+*.iml

@@ -1,0 +1,37 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="user-portal.html">
+
+<dom-module id="login-portal">
+    <template>
+        <firebase-auth id="auth" user="{{user}}" status-known="{{statusKnown}}" provider="google">
+        </firebase-auth>
+
+        <paper-button raised on-tap="login" hidden$="[[user]]">Sign In</paper-button>
+        <paper-button raised on-tap="logout" hidden$="[[!user]]">Sign Out</paper-button>
+        <template is="dom-if" if="[[user]]">
+            <h3>Hello [[user.displayName]]</h3>
+            <user-portal></user-portal>
+        </template>
+    </template>
+    <script>
+    Polymer({
+        is: "login-portal",
+        properties: {
+            user: {
+                type: Object
+            },
+            statusKnown: {
+                type: Object
+            }
+        },
+        login: function(){
+            this.$.auth.signInWithPopup();
+        },
+        logout: function(){
+            this.$.auth.signOut();
+        }
+    });
+    </script>
+</dom-module>

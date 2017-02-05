@@ -1,0 +1,42 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<dom-module id="user-portal">
+    <template>
+        <style>
+
+        </style>
+        <firebase-auth user="{{user}}"></firebase-auth>
+        <firebase-query id="query" path="/users/[[user.uid]]/application" data="{{info}}"></firebase-query>
+        <br>
+        <template is="dom-repeat" items="[[application]]" as="application">
+            <p class="content">[[application.name]]</p>
+        </template>
+        <br>
+        <paper-input id="input" label="First Name"></paper-input>
+        <div id="controls">
+            <paper-button id="add" on-tap="add">Save</paper-button>
+        </div>
+    </template>
+    <script>
+    Polymer({
+        is: "user-portal",
+        properties: {
+            firstName: String,
+            lastName: String,
+            applicationStatus: String,
+            info: {
+                type: Object
+            }
+        },
+        add: function() {
+            this.$.query.ref.push({
+                content: this.$.input.value
+            });
+            this.$.input.value = null;
+        }
+    });
+    </script>
+</dom-module>
