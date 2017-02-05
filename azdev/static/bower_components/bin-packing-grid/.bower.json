@@ -1,0 +1,34 @@
+{
+  "name": "bin-packing-grid",
+  "version": "0.2.3",
+  "description": "Web component that fit elements into a grid using a bin-packing algorithm.",
+  "license": "MIT",
+  "main": "dist/bin-packing-grid.html",
+  "keywords": [
+    "grid",
+    "bin-packing",
+    "bin",
+    "packing",
+    "tiles",
+    "binpacking",
+    "masonry",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "img",
+    "bower_components"
+  ],
+  "homepage": "https://github.com/chris-l/bin-packing-grid",
+  "_release": "0.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.3",
+    "commit": "94e7048c65c692e907fdbf321836c6565e10d9c3"
+  },
+  "_source": "https://github.com/chris-l/bin-packing-grid.git",
+  "_target": "^0.2.3",
+  "_originalSource": "bin-packing-grid",
+  "_direct": true
+}

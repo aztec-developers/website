@@ -1,0 +1,23 @@
+{
+  "name": "bin-packing-grid",
+  "version": "0.2.3",
+  "description": "Web component that fit elements into a grid using a bin-packing algorithm.",
+  "license": "MIT",
+  "main": "dist/bin-packing-grid.html",
+  "keywords": [
+    "grid",
+    "bin-packing",
+    "bin",
+    "packing",
+    "tiles",
+    "binpacking",
+    "masonry",
+    "web-components"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "img",
+    "bower_components"
+  ]
+}

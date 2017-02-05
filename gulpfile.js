@@ -5,6 +5,9 @@ var nodemon = require("gulp-nodemon");
 var browserSync = require("browser-sync");
 var path = require("path");
 var sass = require("gulp-sass");
+var polymerScss = require('gulp-polymer-sass');
+
+
 
 const APP_DIR = path.resolve(__dirname, "azdev/");
 const STATIC_DIR = path.join(APP_DIR,"static/")

@@ -23,6 +23,7 @@
     "gulp-compass": "^2.1.0",
     "gulp-concat": "^2.6.1",
     "gulp-nodemon": "^2.2.1",
+    "gulp-polymer-sass": "^1.2.1",
     "gulp-rename": "^1.2.2",
     "gulp-util": "^3.0.8",
     "nodemon": "^1.11.0",

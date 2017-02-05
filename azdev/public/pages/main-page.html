@@ -7,83 +7,96 @@
 <link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
 <link rel="import" href="../bower_components/neon-animation/neon-animations.html">
 <link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
-	<link rel="import" href="../bower_components/polymer/polymer.html">
-	<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
-	<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
-	<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="about-page.html">
-<link rel="import" href="officer-page.html">
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="join-page.html">
+<link rel="import" href="home-page.html">
 
 <dom-module id="main-page">
-  <template>
-  
-    <style is="custom-style">
-      paper-tab[link] a {
-        @apply(--layout-horizontal);
-        @apply(--layout-center-center);
-        color: black;
-        text-decoration: none;
-      }
-  
-      paper-tab.iron-selected[link] a {
-        color: white;
-      }
+    <template>
+        <style is="custom-style">
+        paper-tab[link] a {
+            @apply(--layout-horizontal);
+            @apply(--layout-center-center);
+            color: white;
+            text-decoration: none;
+            padding: 25%;
 
-      paper-tab .tab-content > a {
-          height: auto;
-      }
-    </style>
-   </head>
-    <app-location route="{{route}}"></app-location>
-    <app-route
-        route="{{route}}"
-        pattern="/:page"
-        data="{{routeData}}"
-        tail="{{subroute}}"></app-route>
+        }
+        
+        #nav-bar {
+            background-color: #E91E63;
+            color: white;
+            width:100%;
+        }
 
-    	<paper-toolbar id="nav-bar">
-        		<div class="title" id="nav-title"></div>
-        		<paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-        				<paper-tab name="about-page" link><a href="/about-page">About</a></paper-tab>
-        				<paper-tab name="officer-page" link><a href="/officer-page">Officers</a></paper-tab>
-        		</paper-tabs>
+        #nav-title{
+        	margin-left:0;
+        	line-height: 1.5;
+        }
+        
+        :host {
+            color: #070707;
+        }
+        
+        :root {
+            --paper-tabs-selection-bar-color: white;
+            --paper-tab-ink: #ccc;
+        }
+        #pages{
+            overflow:scroll;
+            overflow-x:hidden;
+            width:100%;
+            min-height:100vh;
+        }
+        </style>
+        </head>
+        <app-location route="{{route}}"></app-location>
+        <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
+        <paper-toolbar id="nav-bar">
+            <div class="title" id="nav-title">Aztec Developers</div>
+            <paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+	            <paper-tab name="home-page" link><a href="/home-page">Home</a></paper-tab>
+                <paper-tab name="join-page" link><a href="/join-page">Join</a></paper-tab>
+            </paper-tabs>
         </paper-toolbar>
-
-		<neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
-			<about-page name="about-page"></about-page>
-			<officer-page name="officer-page"></officer-page>
-		</neon-animated-pages>
-  </template>
-
-  <script>
+        <neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
+	        <home-page name="home-page"></home-page>
+            <join-page name="join-page"></join-page>
+        </neon-animated-pages>
+    </template>
+    <script>
     Polymer({
-      is: 'main-page',
+        is: 'main-page',
 
-      properties: {
-        page: {
-          type: String,
-          reflectToAttribute: true,
-          observer: '_pageChanged',
+        properties: {
+            page: {
+                type: String,
+                reflectToAttribute: true,
+                observer: '_pageChanged',
+            },
         },
-      },
 
-      observers: [
-        '_routePageChanged(routeData.page)',
-      ],
+        observers: [
+            '_routePageChanged(routeData.page)',
+        ],
 
-      _routePageChanged: function(page) {
-        this.page = page || 'about-page';
-      },
+        _routePageChanged: function(page) {
+            this.page = page || 'home-page';
+        },
 
-      _pageChanged: function(page) {
-        // Load page import on demand. Show 404 page if fails
-        var resolvedPageUrl = this.resolveUrl(page + '.html');
-        this.importHref(resolvedPageUrl, null, this._showPage404, true);
-      },
+        _pageChanged: function(page) {
+            // Load page import on demand. Show 404 page if fails
+            var resolvedPageUrl = this.resolveUrl(page + '.html');
+            this.importHref(resolvedPageUrl, null, this._showPage404, true);
+        },
 
-      _showPage404: function() {
-        this.page = 'view404';
-      },
+        _showPage404: function() {
+            this.page = 'view404';
+        },
     });
-  </script>
+    </script>
 </dom-module>
