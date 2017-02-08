@@ -41,5 +41,9 @@
     "universal-footer": "*",
     "polymerfire": "^0.10.3",
     "paper-input": "PolymerElements/paper-input#^1.1.23"
+  },
+  "resolutions": {
+    "polymer": "^1.6.1",
+    "webcomponentsjs": "0.7.24"
   }
 }
