@@ -9,7 +9,7 @@ var polymerScss = require('gulp-polymer-sass');
 
 
 
-const APP_DIR = path.resolve(__dirname, "azdev/");
+const APP_DIR = path.resolve(__dirname, "athena/");
 const STATIC_DIR = path.join(APP_DIR,"static/")
 const file_match = "**/*.*";
 const paths = {
@@ -34,7 +34,7 @@ gulp.task("styles", function() {
 	return gulp.src(paths["scss"])
 		.pipe(sass({
 		    outputStyle: "compressed",
-		    includePaths: ["node_modules/susy/sass","node_modules/normalize-scss/sass"]
+		    includePaths: []
 		})
 		.on("error", sass.logError))
 		.pipe(gulp.dest(paths["css"]))

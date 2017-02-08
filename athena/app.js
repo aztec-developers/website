@@ -14,15 +14,4 @@ app.get('*', function(req, res) {
   res.sendFile(__dirname + '/public/index.html');
 });
 
-
-
-/* Need to do this fuck. SSR as a backup to client shit. */
-// app.get('/about', function(req, res) {
-//     res.sendFile(__dirname + '/public/about.html');
-// });
-
-// app.get('/join', function(req, res) {
-//     res.sendFile(__dirname + '/public/join.html');
-// });
-
 app.listen(1338);

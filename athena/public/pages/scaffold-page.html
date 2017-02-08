@@ -12,10 +12,10 @@
 <link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="project-page.html">
-<link rel="import" href="home-page.html">
+<link rel="import" href="route-two.html">
+<link rel="import" href="route-one.html">
 
-<dom-module id="main-page">
+<dom-module id="scaffold-page">
     <template>
         <style is="custom-style">
         paper-tab[link] a {
@@ -28,7 +28,7 @@
         }
         
         #nav-bar {
-            background-color: #E91E63;
+            background-color: #8E24AA;
             color: white;
             width:100%;
         }
@@ -52,25 +52,32 @@
             width:100%;
             min-height:100vh;
         }
+
+        a{
+            color:inherit;
+            text-decoration:inherit;
+            cursor:pointer;
+            margin:inherit;
+            padding:inherit;
+        }
         </style>
-        </head>
         <app-location route="{{route}}"></app-location>
         <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
         <paper-toolbar id="nav-bar">
-            <div class="title" id="nav-title">Aztec Developers</div>
+            <div class="title" id="nav-title">Athena</div>
             <paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-	            <paper-tab name="home-page" link><a href="/home-page">Home</a></paper-tab>
-                <paper-tab name="project-page" link><a href="/project-page">Projects</a></paper-tab>
+	            <paper-tab name="route-one" link><a href="/route-one">Route1</a></paper-tab>
+                <paper-tab name="route-two" link><a href="/route-two">Route2</a></paper-tab>
             </paper-tabs>
         </paper-toolbar>
         <neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
-	        <home-page name="home-page"></home-page>
-            <project-page name="project-page"></project-page>
+	        <route-one name="route-one"></route-one>
+            <route-two name="route-two"></route-two>
         </neon-animated-pages>
     </template>
     <script>
     Polymer({
-        is: 'main-page',
+        is: 'scaffold-page',
 
         properties: {
             page: {
@@ -85,7 +92,7 @@
         ],
 
         _routePageChanged: function(page) {
-            this.page = page || 'home-page';
+            this.page = page || 'route-one';
         },
 
         _pageChanged: function(page) {
