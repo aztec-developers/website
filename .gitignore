@@ -60,7 +60,7 @@ jspm_packages
 /test/assets/temp-*/
 /test/reports
 /test/tmp/
-
+*bower_components*
 /bower_components
 /test/sample
 /.vscode
