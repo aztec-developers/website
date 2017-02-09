@@ -5,19 +5,26 @@
 <dom-module id="members-page">
     <template>
         <column-container>
-          <member-card member={{Matt}}></member-card>
+          <!-- <member-card member={{Matt}}></member-card> -->
+          <template is="dom-repeat" items="{{members}}">
+              <member-card member={{item}}></member-card>
+          </template>
         </column-container>
     </template>
     <script>
     Polymer({
         is: "members-page",
-        properties: {
-            Matt: {
-                type: Object,
-                value: function () {
-                    return {name: 'Matt', job: 'Creating the Azdev Website'};
+        ready: function () {
+            this.members = [
+                {
+                    name: 'Matt',
+                    job: 'Creating the Azdev website'
+                },
+                {
+                    name: 'Michael',
+                    job: 'Creating the Azdev website'
                 }
-            }
+            ];
         }
     });
     </script>
