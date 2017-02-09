@@ -4,13 +4,21 @@
 
 <dom-module id="members-page">
     <template>
-        <column-container>abc
-          <member-card member="Matt"></member-card>
+        <column-container>
+          <member-card member={{Matt}}></member-card>
         </column-container>
     </template>
     <script>
     Polymer({
         is: "members-page",
+        properties: {
+            Matt: {
+                type: Object,
+                value: function () {
+                    return {name: 'Matt', job: 'Creating the Azdev Website'};
+                }
+            }
+        }
     });
     </script>
 </dom-module>

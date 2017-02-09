@@ -1,11 +1,13 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
 
 <dom-module id="member-card">
     <template>
         <paper-card>
             <div class="card-content">
-              <h2>[[member]]</h2>
+              <h2>{{member.name}}</h2>
+              <h3>{{member.job}}</h3>
             </div>
           </paper-card>
     </template>
@@ -13,9 +15,8 @@
     Polymer({
         is: "member-card",
         properties: {
-          member: String
+          member: Object
         }
     });
     </script>
 </dom-module>
-
