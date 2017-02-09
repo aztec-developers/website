@@ -42,10 +42,13 @@
     "polymerfire": "^0.10.3",
     "paper-input": "PolymerElements/paper-input#^1.1.23",
     "paper-button": "^1.0.14",
-    "paper-card": "^0.1.5"
+    "paper-card": "^0.1.5",
+    "polymer": "^1.8.0"
   },
   "resolutions": {
-    "polymer": "^1.6.1",
-    "webcomponentsjs": "0.7.24"
+    "polymer": "^1.8.0",
+    "webcomponentsjs": "0.7.24",
+    "paper-ripple": "^1.0.0",
+    "font-roboto": "^1.0.1"
   }
 }
