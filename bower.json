@@ -40,7 +40,9 @@
     "social-media-icons": "^1.3.1",
     "universal-footer": "*",
     "polymerfire": "^0.10.3",
-    "paper-input": "PolymerElements/paper-input#^1.1.23"
+    "paper-input": "PolymerElements/paper-input#^1.1.23",
+    "paper-button": "^1.0.14",
+    "paper-card": "^0.1.5"
   },
   "resolutions": {
     "polymer": "^1.6.1",
