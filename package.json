@@ -2,6 +2,7 @@
   "name": "Athena",
   "version": "0.0.1",
   "description": "Athena is a boilerplate for building web apps quickly with web components.",
+  "license":"BSD-2-Clause",
   "main": "gulpfile.js",
   "author": "",
   "license": "idk",
