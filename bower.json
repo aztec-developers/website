@@ -2,11 +2,10 @@
   "name": "Athena",
   "description": "Athena is a boilerplate for building web apps quickly with web components.",
   "main": "gulpfile.js",
-  "license":"BSD-2-Clause",
+  "license": "idk",
   "authors": [
     "Michael Green <me@michaelgreen.net>"
   ],
-  "license": "idk",
   "homepage": "https://github.com/MichaelScript/azdev",
   "private": true,
   "ignore": [
@@ -33,5 +32,10 @@
     "paper-card": "^0.1.5",
     "webcomponentsjs": "^0.7.24",
     "polymer": "^1.8.0"
+  },
+  "resolutions": {
+    "polymer": "^1.3.1",
+    "font-roboto": "^1.0.1",
+    "paper-ripple": "^1.0.0"
   }
 }
