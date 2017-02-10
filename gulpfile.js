@@ -8,8 +8,7 @@ var sass = require("gulp-sass");
 var polymerScss = require('gulp-polymer-sass');
 
 
-
-const APP_DIR = path.resolve(__dirname, "athena/");
+const APP_DIR = path.resolve(__dirname, "app/");
 const STATIC_DIR = path.join(APP_DIR,"static/")
 const file_match = "**/*.*";
 const paths = {
