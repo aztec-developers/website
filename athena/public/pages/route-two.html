@@ -1,86 +1,20 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/paper-button/paper-button.html">
-<link rel="import" href="../bower_components/iron-grid/iron-grid.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/cards/big-card.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
-<link rel="import" href="../bower_components/social-media-icons/social-media-icons.html">
-
 <dom-module id="route-two">
     <template>
         <style is="custom-style">
-        #home {
-            background-color: #F9F9F9;
-            font-family: "roboto";
-            color: #070707;
-            width: 100%;
-            min-height:90vh;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding-bottom:7.5%;
-        }
-        
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .big-card {
-            max-width: 580px;
-            padding: 2.5%;
-            background-color: #FAFAFA;
-        }
-        
-        p {
-            line-height: 1.5;
-            font-family: Roboto, Noto, sans-serif;
-        }
-        
-        h2,
-        h3 {
-            padding: 0;
-            margin: 0;
-            font-family: 'Roboto Slab', Roboto, Noto, sans-serif;
-        }
-        
-        h3 {
-            opacity: .54;
-        }
-        
-        .section-item {
-            margin: 2.5% 2.5%;
-        }
-
-        #footer {
-            height: 25vh;
-            width: 100%;
-            background-color: #454545;
-            display:flex;
-            flex-direction: column;
-            padding:2%;
-            align-items: center;
-            color:#fafafa;
-        }
-
-        .small-text{
-            font-size:.6em;
-        }
-        .footer-section{
-            margin:.5%;
-        }
-
         </style>
-        <div class="section" id="home">
-            <paper-material class="section-item big-card" elevation="1" animated-shadow="false">
-                <div class="card-content">
-                    <h2>Generic Header</h2>
-                    <h3>Generic Subtitle</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
-                </div>
-            </paper-material>
-        </div>
+        <column-container>
+            <big-card>
+                <h2>Generic Header</h2>
+                <h3>Generic Subtitle</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?</p>
+            </big-card>
+        </column-container>
     </template>
     <script>
     Polymer({
