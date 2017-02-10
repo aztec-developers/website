@@ -1,15 +1,31 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/containers/row-container.html">
 <link rel="import" href="../parts/cards/member-card.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
 
 <dom-module id="members-page">
     <template>
-        <column-container>
-          <!-- <member-card member={{Matt}}></member-card> -->
+    <style type="text/css" is="custom-style">
+        #title {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            line-height: 1.5;
+            font-family: Roboto, Noto, sans-serif;
+        }
+        .row-element {
+            width: 33.3%;
+        }
+    </style>
+        <div id="title">
+            <h2>Members of Azdev</h2>
+        </div>
+        <row-container>
           <template is="dom-repeat" items="{{members}}">
-              <member-card member={{item}}></member-card>
+            <member-card member={{item}} class="row-element" ></member-card>
           </template>
-        </column-container>
+        </row-container>
     </template>
     <script>
     Polymer({
@@ -23,6 +39,30 @@
                 {
                     name: 'Michael',
                     job: 'Creating the Azdev website'
+                },
+                {
+                    name: 'Bob',
+                    job: 'Working on Portal Plus'
+                },
+                {
+                    name: 'Brandon',
+                    job: 'Working on Portal Plus'
+                },
+                {
+                    name: 'Logan',
+                    job: 'Working on Portal Plus'
+                },
+                {
+                    name: 'Diana',
+                    job: 'Acing all the tests'
+                },
+                {
+                    name: 'Bill',
+                    job: 'Learning HTML5'
+                },
+                {
+                    name: 'Mike',
+                    job: 'Learning Angular and Meteor'
                 }
             ];
         }

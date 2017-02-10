@@ -1,0 +1,32 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="row-container">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      #container {
+          background-color: #F9F9F9;
+          font-family: "roboto";
+          color: #070707;
+          width: 100%;
+          min-height:50vh;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          flex-direction: row;
+          padding-bottom: 0.5%;
+      }
+    </style>
+    <div id="container">
+      <content></content>
+    </div>
+  </template>
+  <script>
+    (function() {
+      Polymer({
+        is: 'row-container'
+      });
+    })();
+  </script>
+</dom-module>
