@@ -1,6 +1,6 @@
 {
-  "name": "azdev",
-  "description": "Aztec Developers site",
+  "name": "Athena",
+  "description": "Athena is a boilerplate for building web apps quickly with web components.",
   "main": "gulpfile.js",
   "authors": [
     "Michael Green <me@michaelgreen.net>"
