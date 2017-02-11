@@ -1,7 +1,5 @@
 #Athena
-Athena is a web app template that get's you up and running really fast by using Web Components and Polymer.
-
-
+Athena is the scaffolding for your modern web application. Athena contains a bunch of easily configured web components that most projects will need. This saves you time and let's you get to the important stuff faster.
 
 #### Developer Notes
 You can safely ignore:
