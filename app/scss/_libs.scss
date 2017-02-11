@@ -1,8 +1,0 @@
-$fa-font-path:"../bower_components/font-awesome/fonts/";
-@import "../../node_modules/font-awesome/scss/font-awesome";
-
-/* font-awesome stylings */
-.icon-user {
-  @extend .fa;
-  @extend .fa-user;
-}

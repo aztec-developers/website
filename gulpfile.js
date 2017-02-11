@@ -7,19 +7,13 @@ var path = require("path");
 var sass = require("gulp-sass");
 var polymerScss = require('gulp-polymer-sass');
 
-
+/* Base app directory and uncompiled and compiled app direcotries. */
 const APP_DIR = path.resolve(__dirname, "app/");
-const STATIC_DIR = path.join(APP_DIR,"static/")
-const file_match = "**/*.*";
-const paths = {
-	"static":STATIC_DIR,
-	"js":path.join(STATIC_DIR,"js/",file_match),
-	"css": path.join(STATIC_DIR, "css/"),
-	"images":path.join(STATIC_DIR, "images/"),
-	"scss": path.join(APP_DIR, "scss/",file_match),
-	"routes": path.join(APP_DIR, "public/",file_match),
-	"app": path.join(APP_DIR, "app.js")
-}
+const PATHS = {
+	"build":path.join(APP_DIR,"build"),
+	"dist":path.join(APP_DIR,"dist")
+};
+
 
 const net = {
 	"hostname": "http://localhost",
@@ -28,22 +22,16 @@ const net = {
 	"browser": "google chrome"
 }
 
-/* sass/compass file compilation into one file from nested directories */
-gulp.task("styles", function() {
-	return gulp.src(paths["scss"])
-		.pipe(sass({
-		    outputStyle: "compressed",
-		    includePaths: []
-		})
-		.on("error", sass.logError))
-		.pipe(gulp.dest(paths["css"]))
-		.pipe(browserSync.stream());
-});
+gulp.task("version-info",function(){
+	console.log("Powered by the wisdom of Athena");
+	console.log("Athena Version 0.1");
+	console.log("Created by Michael Green and Matthew Yamout");
+})
 
 gulp.task("browser-sync", ["nodemon"], function() {
 	browserSync.init(null, {
 		proxy: net["hostname"] + ":" + net["proxyPort"],
-		files: [paths["routes"],paths["js"]],
+		files: [PATHS["build"]],
 		browser: net["browser"],
 		port: net["port"],
 		notify:false
@@ -52,11 +40,15 @@ gulp.task("browser-sync", ["nodemon"], function() {
 
 gulp.task("nodemon", function(cb) {
 	return nodemon({
-		script: paths["app"]
+		script: path.join(PATHS["build"],"app.js")
 	}).once("start", cb);
 });
 
 
-gulp.task("default", ["styles","browser-sync"], function() {
-	gulp.watch(paths["scss"],["styles"]);
+// gulp.task("default", ["styles","browser-sync"], function() {
+// 	gulp.watch(paths["scss"],["styles"]);
+// });
+
+gulp.task("default",["version-info","browser-sync"],function(){
 });
+
