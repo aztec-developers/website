@@ -2,7 +2,7 @@
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 <link rel="import" href="../parts/containers/column-container.html">
 <link rel="import" href="../parts/containers/row-container.html">
-<link rel="import" href="../parts/cards/member-card.html">
+<link rel="import" href="../parts/generators/profile-generator.html">
 <link rel="import" href="../parts/cards/big-card.html">
 <link rel="import" href="../parts/generators/form-generator.html">
 <dom-module id="manage-users">
@@ -24,25 +24,34 @@
             width:100%;
             margin:2%;
         }
+
+        #profile-creator {
+            margin-top: 5%;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
         </style>
         <row-container>
-            <template is="dom-repeat" items="{{members}}">
-                <member-card member={{item}} class="row-element"></member-card>
-            </template>
-            <form-generator id="user-creator" button-text="Create User" button-press={{submitEvent}} fields={{fields}}></form-generator>
-
+            <profile-generator id="profile-creator" profiles={{profiles}}></profile-generator>
+             <form-generator id="user-creator" button-text="Create User" button-press={{submitEvent}} fields={{fields}}></form-generator>
         </row-container>
     </template>
     <script>
     Polymer({
         is: "manage-users",
         ready: function() {
-            this.members = [{
+            this.profiles = [{
                 name: 'Matt',
-                status: 'Creating stuff'
+                status: 'Creating stuff',
+                description: 'Currently working on Profile Card styles',
+                image: '/images/testProfilePhoto1.jpg'
             }, {
                 name: 'Michael',
-                status: 'Creating stuff'
+                status: 'Creating stuff',
+                description: 'Currently creating submit button for database',
+                image: '/images/testProfilePhoto2.jpeg'
             }];
             this.fields = [
                 {
