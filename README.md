@@ -10,11 +10,16 @@ I think a large focus of this project should be on generating elements. An eleme
 ##Hack with us
 Here's how you can get set up developing quickly!
 
-1. If you're an official collaborator just clone the repository to your local machine, otherwise create a fork of the project and clone that. `git clone https://github.com/MichaelScript/Athena`
-2. Navigate into the directory, and run the installation scripts `cd athena; npm install; bower install;`
-3. Create and checkout a new branch locally `git checkout -b FEATURE_NAME`
-4. Run gulp to start the development environment! `gulp`
-5. Add your feature or whatever you feel like would be of help, then create a pull request! If you created a fork you'll have to do this manually on github after you push the changes to your fork. `git push origin FEATURE_NAME`
+1. If you're an official collaborator just clone the repository to your local machine, otherwise create a fork of the project and clone that.
+`git clone https://github.com/MichaelScript/Athena`
+2. Navigate into the directory, and run the installation scripts
+`cd athena; npm install; bower install;`
+3. Create and checkout a new branch locally
+`git checkout -b FEATURE_NAME`
+4. Run gulp to start the development environment!
+`gulp`
+5. Add your feature or whatever you feel like would be of help, then create a pull request! If you created a fork you'll have to do this manually on github after you push the changes to your fork.
+`git push origin FEATURE_NAME`
 
 #### Developer Notes
 You can safely ignore:
