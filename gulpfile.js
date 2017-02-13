@@ -5,6 +5,7 @@ var nodemon = require("gulp-nodemon");
 var browserSync = require("browser-sync");
 var path = require("path");
 var sass = require("gulp-sass");
+var vulcanize = require('gulp-vulcanize');
 var polymerScss = require('gulp-polymer-sass');
 
 /* Base app directory and uncompiled and compiled app direcotries. */
@@ -26,8 +27,19 @@ gulp.task("version-info",function(){
 	console.log("Powered by the wisdom of Athena");
 	console.log("Athena Version 0.1");
 	console.log("Created by Michael Green and Matthew Yamout");
-})
+});
 
+
+/* Need to add in vulcanization (and crisper) later, right
+now I don't know how to figure out how to optimize file size
+vs number of requests. */
+// gulp.task('vulcanize', function() {
+//   return gulp.src(PATHS["build"])
+//     .pipe(vulcanize())
+//     .pipe(gulp.dest(PATHS["dist"]));
+// });
+
+/* Syncing browser with project based on port settings */
 gulp.task("browser-sync", ["nodemon"], function() {
 	browserSync.init(null, {
 		proxy: net["hostname"] + ":" + net["proxyPort"],

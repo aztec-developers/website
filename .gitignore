@@ -24,9 +24,6 @@ coverage
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
 # Dependency directories
 node_modules
 jspm_packages
@@ -46,12 +43,9 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-
 .sass-cache/
 *.css.map
 *.css
-
-
 
 /node_modules
 /npm-debug.log
@@ -62,6 +56,8 @@ jspm_packages
 /test/tmp/
 *bower_components*
 /bower_components
+/app/static/bower_components
+
 /test/sample
 /.vscode
 node_modules
