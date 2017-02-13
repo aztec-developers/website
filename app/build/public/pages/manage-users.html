@@ -1,0 +1,64 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/containers/row-container.html">
+<link rel="import" href="../parts/cards/member-card.html">
+<link rel="import" href="../parts/cards/big-card.html">
+<link rel="import" href="../parts/generators/form-generator.html">
+<dom-module id="manage-users">
+    <template>
+        <style type="text/css" is="custom-style">
+        #title {
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+            line-height: 1.5;
+            font-family: Roboto, Noto, sans-serif;
+        }
+        
+        .row-element {
+            width: 33.3%;
+        }
+
+        #user-creator{
+            width:100%;
+            margin:2%;
+        }
+        </style>
+        <row-container>
+            <template is="dom-repeat" items="{{members}}">
+                <member-card member={{item}} class="row-element"></member-card>
+            </template>
+            <form-generator id="user-creator" button-text="Create User" button-press={{submitEvent}} fields={{fields}}></form-generator>
+
+        </row-container>
+    </template>
+    <script>
+    Polymer({
+        is: "manage-users",
+        ready: function() {
+            this.members = [{
+                name: 'Matt',
+                status: 'Creating stuff'
+            }, {
+                name: 'Michael',
+                status: 'Creating stuff'
+            }];
+            this.fields = [
+                {
+                    type:"String",
+                    label:"First Name"
+                },
+                {
+                    type:"String",
+                    label:"Last Name"
+                }
+            ]
+
+            this.submitEvent = function(){
+                alert("ran");
+            }
+        }
+    });
+    </script>
+</dom-module>
