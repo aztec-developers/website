@@ -21,6 +21,43 @@ Here's how you can get set up developing quickly!
 5. Add your feature or whatever you feel like would be of help, then create a pull request! If you created a fork you'll have to do this manually on github after you push the changes to your fork.
 `git push origin FEATURE_NAME`
 
+####Directory Structure
+A quick peak inside the Athena Scaffolding.
+```
+.
+├── README.md
+├── app
+│   ├── build
+│   │   ├── app.js
+│   │   ├── public
+│   │   │   ├── index.html
+│   │   │   ├── pages
+│   │   │   │   ├── manage-users.html
+│   │   │   │   ├── route-one.html
+│   │   │   │   ├── route-two.html
+│   │   │   │   └── scaffold-page.html
+│   │   │   └── parts
+│   │   │       ├── cards
+│   │   │       │   ├── big-card.html
+│   │   │       │   ├── member-card.html
+│   │   │       │   └── small-card.html
+│   │   │       ├── containers
+│   │   │       │   ├── column-container.html
+│   │   │       │   └── row-container.html
+│   │   │       └── generators
+│   │   │           └── form-generator.html
+│   │   └── static
+│   │       ├── bower_components
+│   │       └── images
+│   │           └── README.md
+│   └── dist
+│       └── app.js
+├── bower.json
+├── gulpfile.js
+├── node_modules
+├── package.json
+└── yarn.lock
+```
 #### Developer Notes
 You can safely ignore:
 `Uncaught (in promise) DOMException: Failed to register a ServiceWorker: The script has an unsupported MIME type ('text/html').`
