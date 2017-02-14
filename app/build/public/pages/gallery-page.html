@@ -2,40 +2,33 @@
 <link rel="import" href="../parts/containers/column-container.html">
 <link rel="import" href="../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
-<link rel="import" href="../bower_components/simple-carousel/simple-carousel.html">
-<link rel="import" href="../bower_components/simple-carousel/carousel-slide.html">
+<link rel="import" href="../bower_components/paper-carousel/paper-carousel.html">
 <link rel="import" href="../bower_components/paper-styles/typography.html">
 <dom-module id="gallery-page">
     <template>
         <style is="custom-style">
-        carousel-slide img{
-          /*color: #fff;
-          font-size: 36px;
-          line-height: 100px;
-          margin: 1px;
-          padding: 2%;
-          text-align: center;*/
-          margin-top: 10%;
-        }
-        simple-carousel {
-            width: 500px;
-            height: 500px;
-        }
         </style>
-        <simple-carousel>
-            <carousel-slide>
-                <img src="/images/galleryPhoto1.jpg">
-                <!-- <h3>1</h3> -->
-            </carousel-slide>
-            <carousel-slide>
-                <img src="/images/galleryPhoto2.jpeg">
-                <!-- <h3>2</h3> -->
-            </carousel-slide>
-        </simple-carousel>
+        <paper-carousel data={{carouselItems}}></paper-carousel>
     </template>
     <script>
     Polymer({
         is: 'gallery-page',
+        properties: {
+            ready: function () {
+                this.carouselItems = [
+                    {
+                        title: 'Gallery Photo 1',
+                        text: 'This is a test for photo 1',
+                        image: '/images/galleryPhoto1.jpg'
+                    },
+                    {
+                        title: 'Gallery Photo 2',
+                        text: 'This is a test for photo 2',
+                        image: '/images/galleryPhoto2.jpeg'
+                    }
+                ];
+            }
+        }
     });
     </script>
 </dom-module>
