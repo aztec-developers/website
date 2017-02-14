@@ -7,15 +7,26 @@
     <template>
     <style is="custom-style">
       paper-card {
-        width: 300px;
+        --paper-card-content: {
+          width: 350px;
+          margin: auto;
+          padding: 0;
+        };
         --paper-card-header-image: {
-            width: 300px;
+            width: 350px;
             padding: 0;
         };
       }
       h2, h3, p {
         display: flex;
         justify-content: center;
+        align-items: center;
+      }
+      h3 {
+        opacity: 0.85;
+      }
+      p {
+        opacity: 0.65;
       }
       #profile-card {
         margin: auto;
@@ -23,7 +34,7 @@
         padding: 0;
       }
     </style>
-        <paper-card id="profile-card" image={{profile.image}}>
+        <paper-card id="profile-card" image={{profile.image}} elevation=4>
             <div class="card-content">
               <h2>{{profile.name}}</h2>
               <h3>{{profile.status}}</h3>
@@ -31,7 +42,7 @@
                 {{profile.description}}
               </p>
             </div>
-          </paper-card>
+        </paper-card>
     </template>
     <script>
     Polymer({
