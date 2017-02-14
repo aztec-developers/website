@@ -39,6 +39,11 @@ vs number of requests. */
 //     .pipe(gulp.dest(PATHS["dist"]));
 // });
 
+/* Need to look into using Poly lint to prevent wsod all the time lol */
+
+
+/* PolyClean for minification */
+
 /* Syncing browser with project based on port settings */
 gulp.task("browser-sync", ["nodemon"], function() {
 	browserSync.init(null, {

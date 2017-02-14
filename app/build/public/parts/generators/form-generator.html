@@ -34,7 +34,7 @@
         <paper-material id="creator">
             <div id="input-fields">
                 <template is="dom-repeat" items="{{fields}}" as="field">
-                    <paper-input class="input-field" type={{field.type}} label={{field.label}}></paper-input>
+                    <paper-input class="input-field" id={{field.label}} type={{field.type}} label={{field.label}}></paper-input>
                 </template>
             </div>
             <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
@@ -45,11 +45,13 @@
         is: "form-generator",
         properties: {
             buttonText:String,
+            buttonPress:Object,
+            /* You can attach properties to each of the instances in fields that correspond
+            to html attributes on each of the generated input fields. */
             fields: {
                 type:Array,
                 value:[]
             },
-            buttonPress:Object
         },
         /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
 
