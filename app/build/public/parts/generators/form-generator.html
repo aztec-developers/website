@@ -37,7 +37,7 @@
                     <paper-input class="input-field" type={{field.type}} label={{field.label}}></paper-input>
                 </template>
             </div>
-            <paper-button id="create-button" on-tap={{buttonPress}} raised>[[buttonText]]</paper-button>
+            <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
         </paper-material>
     </template>
     <script>
@@ -51,6 +51,13 @@
             },
             buttonPress:Object
         },
+        /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
+
+        We do this because we can't pass in a function as a property and execute it. By doing this we also get access to the local scope i.e it's binded to this object. You can actually do recursion with this too by calling itself., although I'm not sure what good it would be for.
+        */
+        execute:function(){
+            this.buttonPress();
+        }
     });
     </script>
 </dom-module>
