@@ -8,14 +8,6 @@
 <dom-module id="manage-users">
     <template>
         <style type="text/css" is="custom-style">
-        #title {
-            display: flex;
-            justify-content: center;
-            margin-top: 5%;
-            line-height: 1.5;
-            font-family: Roboto, Noto, sans-serif;
-        }
-        
         .row-element {
             width: 33.3%;
         }
@@ -33,10 +25,7 @@
             align-items: center;
         }
         </style>
-        <row-container>
-          <!--   <profile-generator id="profile-creator" profiles={{profiles}}></profile-generator> -->
-             <form-generator id="user-creator" button-text="Create User" button-press={{submitEvent}} fields={{fields}}></form-generator>
-        </row-container>
+        <profile-generator id="profile-creator" profiles={{profiles}}></profile-generator>
     </template>
     <script>
     Polymer({
@@ -52,6 +41,30 @@
                 status: 'Creating stuff',
                 description: 'Currently creating submit button for database',
                 image: '/images/testProfilePhoto2.jpeg'
+            },
+            {
+                name: 'Michael',
+                status: 'Creating stuff',
+                description: 'Currently creating submit button for database',
+                image: '/images/testProfilePhoto2.jpeg'
+            },
+            {
+                name: 'Michael',
+                status: 'Creating stuff',
+                description: 'Currently creating submit button for database',
+                image: '/images/testProfilePhoto2.jpeg'
+            },
+            {
+                name: 'Matt',
+                status: 'Creating stuff',
+                description: 'Currently working on Profile Card styles',
+                image: '/images/testProfilePhoto1.jpg'
+            },
+            {
+                name: 'Matt',
+                status: 'Creating stuff',
+                description: 'Currently working on Profile Card styles',
+                image: '/images/testProfilePhoto1.jpg'
             }];
             this.fields = [
                 {

@@ -7,42 +7,70 @@
     <template>
     <style is="custom-style">
       paper-card {
-        --paper-card-content: {
-          width: 350px;
-          margin: auto;
-          padding: 0;
-        };
-        --paper-card-header-image: {
-            width: 350px;
-            padding: 0;
-        };
+        width: 350px;
+        height: 300px;
       }
-      h2, h3, p {
+      paper-card h2, h3, p {
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      h3 {
+      paper-card h3 {
         opacity: 0.85;
       }
-      p {
+      paper-card p {
         opacity: 0.65;
       }
-      #profile-card {
-        margin: auto;
-        background-color: #FAFAFA;
-        padding: 0;
+      .flip-container {
+        perspective: 1000px;
+      }
+      .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+      }
+      .flip-container, .front, .back {
+        width: 350px;
+        height: 300px;
+      }
+      .flipper {
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+      }
+      .front, .back {
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+      }
+      .back {
+        transform: rotateY(180deg);
       }
     </style>
-        <paper-card id="profile-card" image={{profile.image}} elevation=4>
-            <div class="card-content">
-              <h2>{{profile.name}}</h2>
-              <h3>{{profile.status}}</h3>
-              <p>
-                {{profile.description}}
-              </p>
+        <div class="flip-container" ontouchstart="this.classList.toggle('hover')">
+          <div class="flipper">
+            <div class="front">
+              <paper-card image={{profile.image}} elevation=4>
+                <div class="content">
+                  <h2> {{profile.name}} </h2>
+                </div>
+              </paper-card>
             </div>
-        </paper-card>
+            <div class="back">
+              <paper-card elevation=4>
+                <div class="content">
+                  <h2> {{profile.name}} </h2>
+                  <h3> {{profile.status}} </h3>
+                  <br>
+                  <p> {{profile.description}} </p>
+                </div>
+              </paper-card>
+            </div>
+          </div>
+        </div>
     </template>
     <script>
     Polymer({
