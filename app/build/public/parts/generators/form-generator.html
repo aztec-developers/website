@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
@@ -56,3 +57,73 @@
     });
     </script>
 </dom-module>
+=======
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-material/paper-material.html">
+<dom-module id="form-generator">
+    <template>
+        <style>
+        #creator {
+            color: #070707;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding:2%;
+            margin:1%;
+        }
+
+        #input-fields{
+            display:flex;
+            margin:2%;
+        }
+
+        .input-field{
+            margin: 2%;
+        }
+
+        #create-button{
+            margin:2%;
+        }
+        </style>
+        <!-- We allow someone to pass in a list of fields and types, then we automatically generate
+        a form with specified fields and button text. This saves time of having to create a bunch of input
+        fields by allowing you to just pass in a list of stuff. -->
+        <paper-material id="creator">
+            <div id="input-fields">
+                <template is="dom-repeat" items="{{fields}}" as="field">
+                    <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
+                </template>
+            </div>
+            <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
+        </paper-material>
+    </template>
+    <script>
+    Polymer({
+        is: "form-generator",
+        properties: {
+            buttonText:String,
+            /* buttonPress should be defined as a function that takes in an HTML collection. You can use this HTML collection to obtain the values of each of the form fields by providing the ids as an argument  */
+            buttonPress:Object,
+            /* You can attach properties to each of the instances in fields that correspond
+            to html attributes on each of the generated input fields. */
+            fields: {
+                type:Array,
+                value:[]
+            },
+        },
+        /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
+
+        We do this because we can't pass in a function as a property and execute it. By doing this we also get access to the local scope i.e it's binded to this object. You can actually do recursion with this too by calling itself., although I'm not sure what good it would be for.
+
+        Execute is a placeholder function that just executes the buttonpress property. We pass in an html collection of all of the form fields and then we can either traverse them by index, or by key. The key is the id that you can optionally provide inside each of the elements you generate.
+        */
+        execute:function(){
+            this.buttonPress(this.$["input-fields"].children);
+        }
+    });
+    </script>
+</dom-module>
+>>>>>>> bebe63c4c95cbc892fda8c8de3dbf4ac873efe97
