@@ -9,7 +9,7 @@
       paper-card {
         --paper-card-content: {
           width: 350px;
-          height: 550px;
+          height: 350px;
           margin: auto;
           padding: 0;
         };
@@ -62,6 +62,10 @@
       .back {
         transform: rotateY(180deg);
       }
+      .back .content {
+        width: 350px;
+        height: 200px;
+      }
     </style>
         <!-- <paper-card id="profile-card" image={{profile.image}} elevation=4>
             <div class="card-content">
@@ -73,14 +77,6 @@
             </div>
         </paper-card> -->
         <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-          <!-- <div class="flipper">
-            <div class="front">
-              <h2> {{profile.name}} </h2>
-            </div>
-            <div class="back">
-              <h2> {{profile.status}} </h2>
-            </div>
-          </div> -->
           <div class="flipper">
             <div class="front">
               <paper-card image={{profile.image}} elevation=4>
@@ -94,7 +90,7 @@
                 <div class="content">
                   <h2> {{profile.name}} </h2>
                   <h2> {{profile.status}} </h2>
-                  <h3> {{profile.description}} </h3>
+                  <p> {{profile.description}} </p>
                 </div>
               </paper-card>
             </div>
