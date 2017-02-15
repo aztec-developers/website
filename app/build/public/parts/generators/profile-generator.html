@@ -7,11 +7,16 @@
 
     <template>
     <style is="custom-style">
-       
+       .row-element {
+         width: 350px;
+         padding: 15px;
+       }
     </style>
-        <template is="dom-repeat" items="{{profiles}}" as="profile">
-            <profile-card profile={{profile}}></profile-card>
-        </template>
+        <row-container>
+            <template is="dom-repeat" items="{{profiles}}" as="profile">
+                <profile-card profile={{profile}} class="row-element"></profile-card>
+            </template>
+        </row-container>
     </template>
     <script>
     Polymer({
