@@ -1,0 +1,45 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../parts/generators/form-generator.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<dom-module id="contact-us">
+    <template>
+        <style is="custom-style">
+            #user-creator{
+                width:100%;
+                margin:2%;
+            }
+        </style>
+        <form-generator id="user-creator" button-text="Send Message" button-press={{submitEvent}} fields={{fields}}></form-generator>
+    </template>
+    <script>
+    Polymer({
+        is: 'contact-us',
+        ready: function () {
+                this.fields = [
+                    {
+                        type: "String",
+                        label: "Name",
+                        id: "name"
+                    },
+                    {
+                        type: "String",
+                        label: "Email",
+                        id: "email"
+                    },
+                    {
+                        type: "String",
+                        label: "Message",
+                        id: "message"
+                    }
+                ],
+                this.submitEvent = function(inputFields) {
+                    console.log(inputFields["name"].value);
+                    console.log(inputFields["email"].value);
+                    console.log(inputFields["message"].value);
+                }
+        }
+    });
+    </script>
+</dom-module>
