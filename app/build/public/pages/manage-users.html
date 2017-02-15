@@ -47,7 +47,7 @@
                 status: 'Creating stuff',
                 description: 'Currently working on Profile Card styles',
                 image: '/images/testProfilePhoto1.jpg'
-            }, {
+            },{
                 name: 'Michael',
                 status: 'Creating stuff',
                 description: 'Currently creating submit button for database',
@@ -56,16 +56,20 @@
             this.fields = [
                 {
                     type:"String",
-                    label:"First Name"
+                    label:"First Name",
+                    id:"first-name",
                 },
                 {
                     type:"String",
-                    label:"Last Name"
+                    label:"Last Name",
+                    id:"last-name"
                 }
             ],
 
-            this.submitEvent = function(){
-                alert(this.$.fields)
+            this.submitEvent = function(inputFields){
+                console.log(inputFields["first-name"].value);
+                console.log(inputFields["last-name"].value);
+
             }
         }
     });

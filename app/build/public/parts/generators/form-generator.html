@@ -34,7 +34,7 @@
         <paper-material id="creator">
             <div id="input-fields">
                 <template is="dom-repeat" items="{{fields}}" as="field">
-                    <paper-input class="input-field" id={{field.label}} type={{field.type}} label={{field.label}}></paper-input>
+                    <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
                 </template>
             </div>
             <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
@@ -45,6 +45,7 @@
         is: "form-generator",
         properties: {
             buttonText:String,
+            /* buttonPress should be defined as a function that takes in an HTML collection. You can use this HTML collection to obtain the values of each of the form fields by providing the ids as an argument  */
             buttonPress:Object,
             /* You can attach properties to each of the instances in fields that correspond
             to html attributes on each of the generated input fields. */
@@ -56,9 +57,11 @@
         /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
 
         We do this because we can't pass in a function as a property and execute it. By doing this we also get access to the local scope i.e it's binded to this object. You can actually do recursion with this too by calling itself., although I'm not sure what good it would be for.
+
+        Execute is a placeholder function that just executes the buttonpress property. We pass in an html collection of all of the form fields and then we can either traverse them by index, or by key. The key is the id that you can optionally provide inside each of the elements you generate.
         */
         execute:function(){
-            this.buttonPress();
+            this.buttonPress(this.$["input-fields"].children);
         }
     });
     </script>
