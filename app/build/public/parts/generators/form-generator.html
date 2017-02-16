@@ -38,10 +38,10 @@
         fields by allowing you to just pass in a list of stuff. -->
         <paper-material id="creator">
             <div id="input-fields">
-                <template is="dom-if" if="{{contactForm}}">
+                <template is="dom-if" if="[[contactFormTrue([[contactForm]])]]">
                     <paper-input label="this works"></paper-input>
                 </template>
-                <template is="dom-if" if="!{{contactForm}}">
+                <template is="dom-if" if="[[contactFormFalse([[contactForm]])]]">
                     <template is="dom-repeat" items="{{fields}}" as="field">
                         <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
                     </template>
@@ -63,6 +63,7 @@
                 type:Array,
                 value:[]
             },
+            contactForm:Boolean
         },
         /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
 
@@ -73,8 +74,11 @@
         execute:function(){
             this.buttonPress(this.$["input-fields"].children);
         },
-        actionIsLogin: function (action) {
-            return action === 'Login';
+        contactFormTrue: function (action) {
+            return action === true;
+        },
+        contactFormFalse: function (action) {
+            return action === false;
         },
     });
     </script>
