@@ -14,6 +14,13 @@
             padding:2%;
             margin:1%;
         }
+        #contact-creator {
+            color: #070707;
+            display: flex;
+            flex-direction: column;
+            padding: 2%;
+            margin: 1%;
+        }
 
         #input-fields{
             display:flex;
@@ -36,12 +43,19 @@
         <!-- We allow someone to pass in a list of fields and types, then we automatically generate
         a form with specified fields and button text. This saves time of having to create a bunch of input
         fields by allowing you to just pass in a list of stuff. -->
+        
+        <paper-material id="contact-creator">
+            <template is="dom-if" if="[[generateContactForm(formType)]]">
+                <paper-input class="input-field" id={{fields.0.id}} type={{fields.0.type}} label={{fields.0.label}}></paper-input>
+                <paper-input class="input-field" id={{fields.1.id}} type={{fields.1.type}} label={{fields.1.label}}></paper-input>
+                <br><br>
+                <paper-input id={{field.2.id}} type={{field.2.type}} label={{field.2.label}}></paper-input>
+            </template>
+        </paper-material>
+
         <paper-material id="creator">
             <div id="input-fields">
-                <template is="dom-if" if="[[contactFormTrue([[contactForm]])]]">
-                    <paper-input label="this works"></paper-input>
-                </template>
-                <template is="dom-if" if="[[contactFormFalse([[contactForm]])]]">
+                <template is="dom-if" if="[[generateNormalForm(formType)]]">
                     <template is="dom-repeat" items="{{fields}}" as="field">
                         <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
                     </template>
@@ -63,7 +77,7 @@
                 type:Array,
                 value:[]
             },
-            contactForm:Boolean
+            formType:String
         },
         /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
 
@@ -74,12 +88,13 @@
         execute:function(){
             this.buttonPress(this.$["input-fields"].children);
         },
-        contactFormTrue: function (action) {
-            return action === true;
+        generateContactForm: function (action) {
+            return action === 'contact-us';
         },
-        contactFormFalse: function (action) {
-            return action === false;
+        generateNormalForm: function (action) {
+            return action === 'normal';
         },
+        
     });
     </script>
 </dom-module>
