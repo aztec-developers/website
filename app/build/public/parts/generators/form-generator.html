@@ -24,6 +24,11 @@
             margin: 2%;
         }
 
+        .text-input {
+            height: 450px;
+            width: 450px;
+        }
+
         #create-button{
             margin:2%;
         }
@@ -33,8 +38,13 @@
         fields by allowing you to just pass in a list of stuff. -->
         <paper-material id="creator">
             <div id="input-fields">
-                <template is="dom-repeat" items="{{fields}}" as="field">
-                    <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
+                <template is="dom-if" if="{{contactForm}}">
+                    <paper-input label="this works"></paper-input>
+                </template>
+                <template is="dom-if" if="!{{contactForm}}">
+                    <template is="dom-repeat" items="{{fields}}" as="field">
+                        <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
+                    </template>
                 </template>
             </div>
             <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
@@ -62,7 +72,10 @@
         */
         execute:function(){
             this.buttonPress(this.$["input-fields"].children);
-        }
+        },
+        actionIsLogin: function (action) {
+            return action === 'Login';
+        },
     });
     </script>
 </dom-module>
