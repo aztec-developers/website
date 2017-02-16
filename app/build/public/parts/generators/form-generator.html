@@ -21,10 +21,19 @@
             padding: 2%;
             margin: 1%;
         }
+        #contact-fields {
+            display: flex;
+            margin: 2%;
+        }
 
         #input-fields{
             display:flex;
             margin:2%;
+        }
+
+        .contact-textarea {
+            width: 250px;
+            height: 450px;
         }
 
         .input-field{
@@ -43,14 +52,14 @@
         <!-- We allow someone to pass in a list of fields and types, then we automatically generate
         a form with specified fields and button text. This saves time of having to create a bunch of input
         fields by allowing you to just pass in a list of stuff. -->
-        
         <paper-material id="contact-creator">
-            <template is="dom-if" if="[[generateContactForm(formType)]]">
-                <paper-input class="input-field" id={{fields.0.id}} type={{fields.0.type}} label={{fields.0.label}}></paper-input>
-                <paper-input class="input-field" id={{fields.1.id}} type={{fields.1.type}} label={{fields.1.label}}></paper-input>
-                <br><br>
-                <paper-input id={{field.2.id}} type={{field.2.type}} label={{field.2.label}}></paper-input>
+            <div id="contact-fields">
+                <template is="dom-if" if="[[generateContactForm(formType)]]">
+                    <paper-input class="input-field" id={{fields.0.id}} type={{fields.0.type}} label={{fields.0.label}}></paper-input>
+                    <paper-input class="input-field" id={{fields.1.id}} type={{fields.1.type}} label={{fields.1.label}}></paper-input>
+                    <textarea class="contact-textarea" id={{field.2.id}} type={{field.2.type}} label={{field.2.label}}></textarea>
             </template>
+            </div>
         </paper-material>
 
         <paper-material id="creator">
@@ -86,7 +95,11 @@
         Execute is a placeholder function that just executes the buttonpress property. We pass in an html collection of all of the form fields and then we can either traverse them by index, or by key. The key is the id that you can optionally provide inside each of the elements you generate.
         */
         execute:function(){
-            this.buttonPress(this.$["input-fields"].children);
+            if (this.formType === 'contact-us') {
+                this.buttonPress(this.$["contact-fields"].children);
+            } else if (this.formType === 'normal') {
+                this.buttonPress(this.$["input-fields"].children);
+            }
         },
         generateContactForm: function (action) {
             return action === 'contact-us';

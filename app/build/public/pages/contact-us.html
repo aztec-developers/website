@@ -38,14 +38,17 @@
                     }
                 ],
                 this.submitEvent = function(inputFields) {
-                    var params = "name="+inputFields["name"].value+"&email="+inputFields["email"].value+"&message="+inputFields["message"].value;
-                    var req = new XMLHttpRequest();
-                    req.open('POST', '/contact_us', true);
-                    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-                    req.onreadystatechange = function () {
-                        if (req.readyState != 4 || req.status != 200) console.log('Something went wrong with the request :(');
-                    };
-                    req.send(params);
+                    // var params = "name="+inputFields["name"].value+"&email="+inputFields["email"].value+"&message="+inputFields["message"].value;
+                    // var req = new XMLHttpRequest();
+                    // req.open('POST', '/contact_us', true);
+                    // req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    // req.onreadystatechange = function () {
+                    //     if (req.readyState != 4 || req.status != 200) console.log('Something went wrong with the request :(');
+                    // };
+                    // req.send(params);
+                    console.log(inputFields["name"].value);
+                    console.log(inputFields["email"].value);
+                    console.log(inputFields);
                 }
         }
     });
