@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../cards/profile-card.html">
 <link rel="import" href="../containers/row-container.html">
@@ -27,3 +28,38 @@
     });
     </script>
 </dom-module>
+=======
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../cards/profile-card.html">
+<link rel="import" href="../cards/profile-card_no_image.html">
+<link rel="import" href="../containers/row-container.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
+<dom-module id="profile-generator">
+
+    <template>
+    <style is="custom-style">
+       .row-element {
+         width: 350px;
+         padding: 15px;
+       }
+    </style>
+        <row-container>
+            <template is="dom-repeat" items="{{profiles}}" as="profile">
+                <profile-card profile={{profile}} class="row-element"></profile-card>
+            </template>
+        </row-container>
+    </template>
+    <script>
+    Polymer({
+        is: "profile-generator",
+        properties: {
+            profiles: {
+                type: Array,
+                value: []
+            },
+        }
+    });
+    </script>
+</dom-module>
+>>>>>>> f5924995a8f26a1eeda0ea3f89cb6f04b94b0dd4
