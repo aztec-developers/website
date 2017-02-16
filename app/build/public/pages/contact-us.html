@@ -35,9 +35,15 @@
                     }
                 ],
                 this.submitEvent = function(inputFields) {
-                    console.log(inputFields["name"].value);
-                    console.log(inputFields["email"].value);
-                    console.log(inputFields["message"].value);
+                    // console.log(inputFields["name"].value);
+                    // console.log(inputFields["email"].value);
+                    // console.log(inputFields["message"].value);
+                    var req = new XMLHttpRequest();
+                    req.open('POST', '/contact_us', true);
+                    req.onreadystatechange = function () {
+                        if (req.readyState != 4 || req.status != 200) return;
+                    };
+                    req.send("name="+inputFields["name"]+"email="+inputFields["email"]+"message="+inputFields["message"]);
                 }
         }
     });
