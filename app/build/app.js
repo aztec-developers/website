@@ -20,9 +20,11 @@ app.get('*', function(req, res) {
 app.post('/contact_us', function(req, res) {
   var name = req.body.name;
   var email = req.body.email;
+  var subject = req.body.subject;
   var message = req.body.message;
   console.log(name);
   console.log(email);
+  console.log(subject);
   console.log(message);
   res.send('message sent!');
 });

@@ -1,10 +1,14 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../../bower_components/paper-input/paper-textarea.html">
 <link rel="import" href="../../bower_components/paper-material/paper-material.html">
 <dom-module id="form-generator">
     <template>
-        <style>
+        <style is="custom-style">
+        paper-textarea {
+            --paper-input-container-underline-disabled
+        }
         #creator {
             color: #070707;
             display:flex;
@@ -17,13 +21,18 @@
         #contact-creator {
             color: #070707;
             display: flex;
-            flex-direction: column;
             padding: 2%;
             margin: 1%;
         }
         #contact-fields {
-            display: flex;
             margin: 2%;
+        }
+
+        #message {
+            height: 300px;
+            width: 300px;
+            margin: 2%;
+            resize: none;
         }
 
         #input-fields{
@@ -31,18 +40,8 @@
             margin:2%;
         }
 
-        .contact-textarea {
-            width: 250px;
-            height: 450px;
-        }
-
         .input-field{
             margin: 2%;
-        }
-
-        .text-input {
-            height: 450px;
-            width: 450px;
         }
 
         #create-button{
@@ -52,26 +51,27 @@
         <!-- We allow someone to pass in a list of fields and types, then we automatically generate
         a form with specified fields and button text. This saves time of having to create a bunch of input
         fields by allowing you to just pass in a list of stuff. -->
-        <paper-material id="contact-creator">
-            <div id="contact-fields">
-                <template is="dom-if" if="[[generateContactForm(formType)]]">
+        <template is="dom-if" if="[[generateContactForm(formType)]]">
+            <paper-material id="contact-creator">
+                <div id="contact-fields">
                     <paper-input class="input-field" id={{fields.0.id}} type={{fields.0.type}} label={{fields.0.label}}></paper-input>
                     <paper-input class="input-field" id={{fields.1.id}} type={{fields.1.type}} label={{fields.1.label}}></paper-input>
-                    <textarea class="contact-textarea" id={{field.2.id}} type={{field.2.type}} label={{field.2.label}}></textarea>
-            </template>
-            </div>
-        </paper-material>
-
-        <paper-material id="creator">
-            <div id="input-fields">
-                <template is="dom-if" if="[[generateNormalForm(formType)]]">
+                    <paper-input class="input-field" id={{fields.2.id}} type={{fields.2.type}} label={{fields.2.label}}></paper-input>
+                    <paper-textarea id={{fields.3.id}} type={{fields.3.type}} label={{fields.3.label}}></paper-textarea>
+                    <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
+                </div>
+            </paper-material>
+        </template>
+        <template is="dom-if" if="[[generateNormalForm(formType)]]">
+            <paper-material id="creator">
+                <div id="input-fields">
                     <template is="dom-repeat" items="{{fields}}" as="field">
                         <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
                     </template>
-                </template>
-            </div>
-            <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
-        </paper-material>
+                </div>
+                <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
+            </paper-material>
+        </template>
     </template>
     <script>
     Polymer({
