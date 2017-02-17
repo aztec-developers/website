@@ -1,0 +1,65 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../parts/generators/form-generator.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<dom-module id="contact-us">
+    <template>
+        <style is="custom-style">
+            #user-creator{
+                width:100%;
+                margin:2%;
+            }
+        </style>
+        <!-- If you want the contact form generated you need to pass contact-form=true -->
+        <form-generator id="user-creator" button-text="Send Message" button-press={{submitEvent}} fields={{fields}}>
+            
+        </form-generator>
+    </template>
+    <script>
+    Polymer({
+        is: 'contact-us',
+        ready: function () {
+                this.fields = [
+                    {
+                        type: "String",
+                        label: "Name",
+                        id: "name",
+                        textarea: false
+                    },
+                    {
+                        type: "String",
+                        label: "Email",
+                        id: "email",
+                        textarea: false
+                    },
+                    {
+                        type:"String",
+                        label:"Subject",
+                        id: "subject",
+                        textarea: false
+                    },
+                    {
+                        type: "String",
+                        label: "Message",
+                        id: "message",
+                        textarea: true
+                    }
+                ],
+                this.submitEvent = function(inputFields) {
+                    var params = "name="+inputFields["name"].value+"&email="+inputFields["email"].value+"&subject="+inputFields["subject"].value+"&message="+inputFields["message"].value;
+                    var req = new XMLHttpRequest();
+                    req.open('POST', '/contact_us', true);
+                    req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    req.onreadystatechange = function () {
+                        if (req.readyState != 4 || req.status != 200) console.log('Something went wrong with the request :(');
+                    };
+                    req.send(params);
+                    // console.log(inputFields["name"].value);
+                    // console.log(inputFields["email"].value);
+                    // console.log(inputFields["message"].value);
+                }
+        }
+    });
+    </script>
+</dom-module>

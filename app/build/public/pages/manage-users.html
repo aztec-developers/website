@@ -25,7 +25,10 @@
             align-items: center;
         }
         </style>
-        <profile-generator id="profile-creator" profiles={{profiles}}></profile-generator>
+        <row-container>
+            <profile-generator id="profile-creator" profiles={{profiles}}></profile-generator>
+             <form-generator id="user-creator" button-text="Create User" button-press={{submitEvent}} fields={{fields}} form-type="normal"></form-generator>
+        </row-container>
     </template>
     <script>
     Polymer({
@@ -71,11 +74,13 @@
                     type:"String",
                     label:"First Name",
                     id:"first-name",
+                    textarea: false
                 },
                 {
                     type:"String",
                     label:"Last Name",
-                    id:"last-name"
+                    id:"last-name",
+                    textarea: false
                 }
             ],
 

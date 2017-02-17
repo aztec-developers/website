@@ -1,0 +1,34 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-carousel/paper-carousel.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<dom-module id="gallery-page">
+    <template>
+        <style is="custom-style">
+        </style>
+        <paper-carousel data={{carouselItems}}></paper-carousel>
+    </template>
+    <script>
+    Polymer({
+        is: 'gallery-page',
+        properties: {
+            ready: function () {
+                this.carouselItems = [
+                    {
+                        title: 'Gallery Photo 1',
+                        text: 'This is a test for photo 1',
+                        image: '/images/galleryPhoto1.jpg'
+                    },
+                    {
+                        title: 'Gallery Photo 2',
+                        text: 'This is a test for photo 2',
+                        image: '/images/galleryPhoto2.jpeg'
+                    }
+                ];
+            }
+        }
+    });
+    </script>
+</dom-module>
