@@ -51,7 +51,7 @@
         <!-- We allow someone to pass in a list of fields and types, then we automatically generate
         a form with specified fields and button text. This saves time of having to create a bunch of input
         fields by allowing you to just pass in a list of stuff. -->
-        <template is="dom-if" if="[[generateContactForm(formType)]]">
+        <!-- <template is="dom-if" if="[[generateContactForm(formType)]]">
             <paper-material id="contact-creator">
                 <div id="contact-fields">
                     <paper-input class="input-field" id={{fields.0.id}} type={{fields.0.type}} label={{fields.0.label}}></paper-input>
@@ -61,17 +61,15 @@
                     <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
                 </div>
             </paper-material>
-        </template>
-        <template is="dom-if" if="[[generateNormalForm(formType)]]">
-            <paper-material id="creator">
-                <div id="input-fields">
-                    <template is="dom-repeat" items="{{fields}}" as="field">
-                        <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
-                    </template>
-                </div>
-                <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
-            </paper-material>
-        </template>
+        </template> -->
+        <paper-material id="creator">
+            <div id="input-fields">
+                <template is="dom-repeat" items="{{fields}}" as="field">
+                    <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
+                </template>
+            </div>
+            <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
+        </paper-material>
     </template>
     <script>
     Polymer({
@@ -95,19 +93,8 @@
         Execute is a placeholder function that just executes the buttonpress property. We pass in an html collection of all of the form fields and then we can either traverse them by index, or by key. The key is the id that you can optionally provide inside each of the elements you generate.
         */
         execute:function(){
-            if (this.formType === 'contact-us') {
-                this.buttonPress(this.$["contact-fields"].children);
-            } else if (this.formType === 'normal') {
-                this.buttonPress(this.$["input-fields"].children);
-            }
+            this.buttonPress(this.$["input-fields"].children);
         },
-        generateContactForm: function (action) {
-            return action === 'contact-us';
-        },
-        generateNormalForm: function (action) {
-            return action === 'normal';
-        },
-        
     });
     </script>
 </dom-module>
