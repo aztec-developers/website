@@ -6,9 +6,16 @@
 <dom-module id="form-generator">
     <template>
         <style is="custom-style">
+
         paper-textarea {
-            --paper-input-container-underline-disabled
+            --paper-input-container-underline: {
+                border-bottom: none;
+            };
+            --paper-input-container-underline-focus: {
+                border-bottom: none;
+            };
         }
+
         #creator {
             color: #070707;
             display:flex;
@@ -29,10 +36,10 @@
         }
 
         #message {
-            height: 300px;
             width: 300px;
+            height: 400px;
+            overflow: hidden;
             margin: 2%;
-            resize: none;
         }
 
         #input-fields{
@@ -51,21 +58,15 @@
         <!-- We allow someone to pass in a list of fields and types, then we automatically generate
         a form with specified fields and button text. This saves time of having to create a bunch of input
         fields by allowing you to just pass in a list of stuff. -->
-        <!-- <template is="dom-if" if="[[generateContactForm(formType)]]">
-            <paper-material id="contact-creator">
-                <div id="contact-fields">
-                    <paper-input class="input-field" id={{fields.0.id}} type={{fields.0.type}} label={{fields.0.label}}></paper-input>
-                    <paper-input class="input-field" id={{fields.1.id}} type={{fields.1.type}} label={{fields.1.label}}></paper-input>
-                    <paper-input class="input-field" id={{fields.2.id}} type={{fields.2.type}} label={{fields.2.label}}></paper-input>
-                    <paper-textarea id={{fields.3.id}} type={{fields.3.type}} label={{fields.3.label}}></paper-textarea>
-                    <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
-                </div>
-            </paper-material>
-        </template> -->
         <paper-material id="creator">
             <div id="input-fields">
                 <template is="dom-repeat" items="{{fields}}" as="field">
-                    <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
+                    <template is="dom-if" if={{field.textarea}}>
+                        <paper-textarea id={{field.id}} type={{field.type}} label={{field.label}}></paper-textarea>
+                    </template>
+                    <template is="dom-if" if={{!field.textarea}}>
+                        <paper-input class="input-field" id={{field.id}} type={{field.type}} label={{field.label}}></paper-input>
+                    </template>
                 </template>
             </div>
             <paper-button id="create-button" on-tap="execute" raised>[[buttonText]]</paper-button>
@@ -84,7 +85,6 @@
                 type:Array,
                 value:[]
             },
-            formType:String
         },
         /* We are cheating the system by passing in an object which is really a function because everything is an object and then calling this object down here (:
 

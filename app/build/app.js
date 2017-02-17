@@ -2,11 +2,17 @@
 
 // simple express server
 var express = require('express');
+var helmet = require('helmet');
 var app = express();
 var router = express.Router();
 var bodyParser = require('body-parser');
+
+/* Sets up body parser for post requests */
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+/* Helmet sets up the Express server to use super awesome security protocols */
+app.use(helmet());
 
 /* Static assets, CSS, Images, bower components, etc. */
 app.use(express.static(__dirname + '/static'));
