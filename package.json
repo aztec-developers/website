@@ -1,7 +1,7 @@
 {
-  "name": "Athena",
+  "name": "Scaff",
   "version": "0.0.1",
-  "description": "Athena is a boilerplate for building web apps quickly with web components.",
+  "description": "Scaff is a boilerplate for building web apps quickly with web components.",
   "license": "idk",
   "main": "gulpfile.js",
   "author": "",

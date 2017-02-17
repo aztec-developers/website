@@ -24,8 +24,8 @@ const net = {
 }
 
 gulp.task("version-info",function(){
-	console.log("Powered by the wisdom of Athena");
-	console.log("Athena Version 0.1");
+	console.log("Powered by the wisdom of Scaff");
+	console.log("Scaff Version 0.1");
 	console.log("Created by Michael Green and Matthew Yamout");
 });
 
