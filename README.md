@@ -1,13 +1,7 @@
 #Scaff
-Scaff is the scaffolding for your modern web application. Scaff contains a bunch of easily configured web components that most projects will need. This saves you time and let's you get to the important stuff faster.
+Scaff is the scaffolding for your web application. Scaff contains a bunch of easily configured web components that most projects will need. This saves you time and let's you get to the important stuff faster. Scaff is in it's early stages right now but we're adding more every day. 
 
-## Core Concepts
-Scaff aims to make the development experience easy by providing you with an entire development environment, web component usage, easy deployment and more.
-
-###Generating Elements
-I think a large focus of this project should be on generating elements. An element generator is the idea of creating a bunch of elements by passing in a list of objects to a single element. For an example of this see the generators folder located at `app/public/parts/generators`. This is useful because it keeps code terse and allows you to do cool stuff like generate entire forms on the fly very quickly.
-
-##Hack with us
+##Contribute
 Here's how you can get set up developing quickly!
 
 1. If you're an official collaborator just clone the repository to your local machine, otherwise create a fork of the project and clone that.
@@ -21,44 +15,17 @@ Here's how you can get set up developing quickly!
 5. Add your feature or whatever you feel like would be of help, then create a pull request! If you created a fork you'll have to do this manually on github after you push the changes to your fork.
 `git push origin FEATURE_NAME`
 
-####Directory Structure
-A quick peak inside the Scaff Scaffolding.
-```
-.
-├── README.md
-├── app
-│   ├── build
-│   │   ├── app.js
-│   │   ├── public
-│   │   │   ├── index.html
-│   │   │   ├── pages
-│   │   │   │   ├── manage-users.html
-│   │   │   │   ├── route-one.html
-│   │   │   │   ├── route-two.html
-│   │   │   │   └── scaffold-page.html
-│   │   │   └── parts
-│   │   │       ├── cards
-│   │   │       │   ├── big-card.html
-│   │   │       │   ├── member-card.html
-│   │   │       │   └── small-card.html
-│   │   │       ├── containers
-│   │   │       │   ├── column-container.html
-│   │   │       │   └── row-container.html
-│   │   │       └── generators
-│   │   │           └── form-generator.html
-│   │   └── static
-│   │       ├── bower_components
-│   │       └── images
-│   │           └── README.md
-│   └── dist
-│       └── app.js
-├── bower.json
-├── gulpfile.js
-├── node_modules
-├── package.json
-└── yarn.lock
-```
-#### Developer Notes
+
+
+## Developer Notes
+
+###Ideas and Concepts
+
+####Generating Elements
+I think a large focus of this project should be on generating elements. An element generator is the idea of creating a bunch of elements by passing in a list of objects to a single element. For an example of this see the generators folder located at `app/public/parts/generators`. This is useful because it keeps code terse and allows you to do cool stuff like generate entire forms on the fly very quickly.
+
+###Development Issues
+####Serviceworker
 You can safely ignore:
 `Uncaught (in promise) DOMException: Failed to register a ServiceWorker: The script has an unsupported MIME type ('text/html').`
-Service workers aren't generated in a local development environment, therefore this won't impact anything.
+This is because of the proxy server that is set up. You can ignore this but if it bothers you, you can also just browse on port 1338 instead.
