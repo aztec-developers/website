@@ -1,60 +1,3 @@
-<<<<<<< HEAD
-<link rel="import" href="../../bower_components/polymer/polymer.html">
-<link rel="import" href="small-card.html">
-<link rel="import" href="../../bower_components/paper-card/paper-card.html">
-<link rel="import" href="../../bower_components/paper-styles/typography.html">
-
-<dom-module id="profile-card">
-    <template>
-    <style is="custom-style">
-      paper-card {
-        --paper-card-content: {
-          width: 350px;
-          margin: auto;
-          padding: 0;
-        };
-        --paper-card-header-image: {
-            width: 350px;
-            padding: 0;
-        };
-      }
-      h2, h3, p {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      h3 {
-        opacity: 0.85;
-      }
-      p {
-        opacity: 0.65;
-      }
-      #profile-card {
-        margin: auto;
-        background-color: #FAFAFA;
-        padding: 0;
-      }
-    </style>
-        <paper-card id="profile-card" image={{profile.image}} elevation=4>
-            <div class="card-content">
-              <h2>{{profile.name}}</h2>
-              <h3>{{profile.status}}</h3>
-              <p>
-                {{profile.description}}
-              </p>
-            </div>
-        </paper-card>
-    </template>
-    <script>
-    Polymer({
-        is: "profile-card",
-        properties: {
-          profile: Object
-        }
-    });
-    </script>
-</dom-module>
-=======
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="small-card.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
@@ -138,4 +81,3 @@
     });
     </script>
 </dom-module>
->>>>>>> f5924995a8f26a1eeda0ea3f89cb6f04b94b0dd4
