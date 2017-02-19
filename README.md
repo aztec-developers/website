@@ -23,9 +23,3 @@ Here's how you can get set up developing quickly!
 
 ####Generating Elements
 I think a large focus of this project should be on generating elements. An element generator is the idea of creating a bunch of elements by passing in a list of objects to a single element. For an example of this see the generators folder located at `app/public/parts/generators`. This is useful because it keeps code terse and allows you to do cool stuff like generate entire forms on the fly very quickly.
-
-###Development Issues
-####Serviceworker
-You can safely ignore:
-`Uncaught (in promise) DOMException: Failed to register a ServiceWorker: The script has an unsupported MIME type ('text/html').`
-This is because you're in a local development environment. This won't appear outside testing on your localhost.
