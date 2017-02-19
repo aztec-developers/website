@@ -28,4 +28,4 @@ I think a large focus of this project should be on generating elements. An eleme
 ####Serviceworker
 You can safely ignore:
 `Uncaught (in promise) DOMException: Failed to register a ServiceWorker: The script has an unsupported MIME type ('text/html').`
-This is because of the proxy server that is set up. You can ignore this but if it bothers you, you can also just browse on port 1338 instead.
+This is because you're in a local development environment. This won't appear outside testing on your localhost.
