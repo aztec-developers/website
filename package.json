@@ -1,7 +1,7 @@
 {
-  "name": "Aztec Developers' Website",
+  "name": "Scaff",
   "version": "0.0.1",
-  "description": "Website for Aztec Developers clubs created using the Scaff framework",
+  "description": "Scaff is a boilerplate for building web apps quickly with web components.",
   "license": "idk",
   "main": "gulpfile.js",
   "author": "",
