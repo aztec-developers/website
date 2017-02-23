@@ -1,6 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../cards/profile-card.html">
 <link rel="import" href="../cards/profile-card_no_image.html">
+<link rel="import" href="../cards/profile-cardtest.html">
 <link rel="import" href="../containers/row-container.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 
@@ -10,12 +11,13 @@
     <style is="custom-style">
        .row-element {
          width: 350px;
-         padding: 15px;
+         padding: 2%;
+         margin-bottom: 5%;
        }
     </style>
         <row-container>
             <template is="dom-repeat" items="{{profiles}}" as="profile">
-                <profile-card profile={{profile}} class="row-element"></profile-card>
+                <profile-cardtest profile={{profile}} class="row-element"></profile-cardtest>
             </template>
         </row-container>
     </template>
@@ -27,6 +29,13 @@
                 type: Array,
                 value: []
             },
+            ready: function () {
+                this.profiles =[{
+                    name: 'Matt',
+                    status: 'Polymer Master',
+                    description: 'this actuallyed worked!!!'
+                }];
+            }
         }
     });
     </script>

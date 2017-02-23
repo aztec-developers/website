@@ -1,7 +1,7 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 <link rel="import" href="../containers/row-container.html">
 <link rel="import" href="../containers/column-container.html">
-<link rel="import" href="../cards/big-card.html">
+<link rel="import" href="../cards/small-card.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 
@@ -9,8 +9,20 @@
 
     <template>
     <style is="custom-style">
+
+      @media screen and (min-width: 300px) and (max-width: 500px) {
+        .landing-content {
+          width: 350px;
+          padding: 4%;
+          margin-left: 20%;
+        }
+        .landing-image {
+          display: none;
+        }
+      }
+
        paper-card.landing {
-        width: 65%;
+        width: 80%;
         margin: auto;
         @apply(--layout-horizontal);
         overflow:hidden;
@@ -21,7 +33,7 @@
         overflow-x: hidden;
       }
       .landing-content {
-        width: 60%;
+        width: 500px;
       }
       h2 {
         font-size: 35px;
@@ -41,8 +53,8 @@
         width:40%;
       }
     </style>
-        <column-container>
-            <paper-card class="landing">
+        <row-container>
+              <paper-card class="landing" elevation=4>
                 <div class="landing-content">
                     <div class="card-content">
                         <h2> {{landingFields.title}} </h2>
@@ -53,8 +65,8 @@
                 <div class="image-container">
                 <img src="{{landingFields.image}}" class="landing-image">
                 </div>
-            </paper-card>
-        </column-container>
+              </paper-card>
+        </row-container>
     </template>
     <script>
     Polymer({

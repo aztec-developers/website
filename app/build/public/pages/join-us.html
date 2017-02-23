@@ -1,0 +1,61 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/containers/row-container.html">
+<link rel="import" href="../parts/cards/small-card.html">
+<link rel="import" href="../parts/cards/big-card.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<dom-module id="join-us">
+    <template>
+        <style is="custom-style">
+
+        @media(max-width: 500px) {
+            .size {
+                width: 375px;
+                height: 550px;
+            }
+        }
+        @media(max-width: 450px) {
+            .size {
+                width: 350px;
+                height: 550px;
+            }
+        }
+        @media(max-width: 320px) {
+            .size {
+                width: 310px;
+                height: 550px;
+            }
+        }
+        @media(min-width: 1000px) {
+            .size {
+                height: 600px;
+            }
+        }
+
+            iframe {
+                margin: auto;
+                width: 760px;
+                height: 500px;
+            }
+            small-card {
+                width: 780px;
+                height: 600px;
+            }
+            row-container {
+                padding: 5%;
+            }
+        </style>
+        <row-container>
+            <small-card>
+                <iframe class="size" src="https://docs.google.com/forms/d/e/1FAIpQLSdxOlVMkKBiTsN_1HjND0orNESe3_5a3f1v0P67IZtIn4Bydw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+            </small-card>
+        </row-container>
+    </template>
+    <script>
+    Polymer({
+        is: 'join-us',
+    });
+    </script>
+</dom-module>

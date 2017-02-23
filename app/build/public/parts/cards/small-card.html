@@ -12,7 +12,7 @@
     }
     
     .small-card {
-        min-width: 450px;
+        min-width: 350px;
         margin: auto;
         background-color: #FAFAFA;
         padding: 2%;
@@ -21,6 +21,7 @@
     p {
         line-height: 1.5;
         font-family: Roboto, Noto, sans-serif;
+        opacity: 0.56;
     }
     
     h2,
@@ -31,10 +32,15 @@
     }
     
     h3 {
-        opacity: .54;
+        opacity: .0.85;
+    }
+    h2, h3, p {
+        display: flex;
+        justify-content: center;
+        align-content: center;
     }
     </style>
-    <paper-material class="small-card" elevation="1" animated-shadow="false">
+    <paper-material class="small-card" elevation="4" animated-shadow="false">
       <content></content>
     </paper-material>
   </template>

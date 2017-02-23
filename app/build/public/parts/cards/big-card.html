@@ -6,6 +6,27 @@
 <dom-module id="big-card">
 	<template>
 		<style>
+
+		@media (max-width: 990px) {
+        .big-card {
+					min-width:100px;
+			    max-width: 150px;
+			    padding: 2.5%;
+			    background-color: #FAFAFA;
+			    margin: 2.5%;
+		}
+      }
+
+      @media (min-width: 1000px) {
+      	.big-card {
+					min-width:500px;
+			    max-width: 580px;
+			    padding: 2.5%;
+			    background-color: #FAFAFA;
+			    margin: 2.5%;
+		}
+      }
+
 		a {
 		    text-decoration: none;
 		    color: inherit;

@@ -1,0 +1,54 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../containers/column-container.html">
+<link rel="import" href="small-card.html">
+<link rel="import" href="big-card.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+
+<dom-module id="profile-cardtest">
+    <template>
+    <style is="custom-style">
+
+      paper-card {
+        --paper-card-header-image: {
+          height: 300px;
+        };
+        --paper-card: {
+          width: 350px;
+        };
+      }
+
+      .content {
+        padding: 4%;
+      }
+
+      paper-card h2, h3, p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      paper-card h3 {
+        opacity: 0.85;
+      }
+      paper-card p {
+        opacity: 0.65;
+      }
+
+    </style>
+        <paper-card elevation=4>
+          <div class="content">
+            <h2>{{profile.name}}</h2>
+            <h3>{{profile.status}}</h3>
+            <p>{{profile.description}}</p>
+          </div>
+        </paper-card>
+    </template>
+    <script>
+    Polymer({
+        is: "profile-cardtest",
+        properties: {
+          profile: Object
+        }
+    });
+    </script>
+</dom-module>

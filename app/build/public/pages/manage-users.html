@@ -27,7 +27,6 @@
         </style>
         <row-container>
             <profile-generator id="profile-creator" profiles={{profiles}}></profile-generator>
-             <form-generator id="user-creator" button-text="Create User" button-press={{submitEvent}} fields={{fields}} form-type="normal"></form-generator>
         </row-container>
     </template>
     <script>
@@ -35,39 +34,35 @@
         is: "manage-users",
         ready: function() {
             this.profiles = [{
-                name: 'Matt',
-                status: 'Creating stuff',
-                description: 'Currently working on Profile Card styles',
-                image: '/images/testProfilePhoto1.jpg'
+                name: 'Shekib Aziz',
+                status: 'President',
+                description: 'Shekib is the founder of Aztec Developers and is a 3rd year student at San Diego State University pursuing a Bachelor\'s in Computer Science. Being a first generation college student in the US Shekib found figuring out what classes you need to take in order to graduate more complicated than it should be and saw that many people take extra classes by a mistake. Therefore, he wanted to join a club to work on this project. However, there wasn\'t an active club that would work on developing software therefore he gathered his classmates and friends to work on this project. Shekib believes that technology could change the world to a better place if used with the right motives.',
+                image: '/images/Shekib-Aziz_resized.jpg'
             },{
-                name: 'Michael',
-                status: 'Creating stuff',
-                description: 'Currently creating submit button for database',
-                image: '/images/testProfilePhoto2.jpeg'
-            },
-            {
-                name: 'Michael',
-                status: 'Creating stuff',
-                description: 'Currently creating submit button for database',
-                image: '/images/testProfilePhoto2.jpeg'
-            },
-            {
-                name: 'Michael',
-                status: 'Creating stuff',
-                description: 'Currently creating submit button for database',
-                image: '/images/testProfilePhoto2.jpeg'
-            },
-            {
-                name: 'Matt',
-                status: 'Creating stuff',
-                description: 'Currently working on Profile Card styles',
-                image: '/images/testProfilePhoto1.jpg'
-            },
-            {
-                name: 'Matt',
-                status: 'Creating stuff',
-                description: 'Currently working on Profile Card styles',
-                image: '/images/testProfilePhoto1.jpg'
+                name: 'Vaso Vasich',
+                status: 'Vice-President',
+                description: 'Vaso Vasich is a third year student at San Diego State University. Outside of school, Vaso enjoys playing ice hockey as well as dancing Serbian Folklore. School, sports, and this club tend to be the reason Vaso lacks sleep in his daily life',
+                image: '/images/Vaso-Vasich_resized.JPG'
+            },{
+                name: 'Ole Larsen',
+                status: 'Treasurer',
+                description: 'Ole Larsen is a senior at San Diego State University. He enjoys pushing technological boundries in a team based environment. When he is not programming, Ole enjoys playing soccer and spending time with friends and family.',
+                images: '/images/Ole.jpg'
+            },{
+                name: 'Nimish Saxena',
+                status: 'Social Media Manager',
+                description: 'Nimish Saxena is a third year student at San Diego State University who is currently pursuing a Bachelor\'s Degree in Computer Science. Nimish\'s preferred future goals are to work in either mobile or game development. Nimish loves to write code, play video games, and receive transactions of large sums of money, even though it has never happened.',
+                image: '/images/Nimish-Saxena_resized.jpg'
+            },{
+                name: 'David Arce',
+                status: 'Lead Developer',
+                description: 'David Arce is a 3rd student at San Diego State University with 5 years of experience in business, web development, web hosting, and web design. David seeks interest in the fields of web development, software engineering, data science, and AI. For this club David provides graphic designs for as well as being a leader by taking great initiative to develop projects, create new ideas and assist other members.',
+                image: '/images/test.jpg'
+            },{
+                name: 'Ernest Viola',
+                status: 'Secretary',
+                description: 'Ernest is a hardworking people person who always looks to push the team forward. He\'s very capable and is not afraid to put himself out there. Ernest lives by the philosophy: \' You don\'t know what\s possible until you start asking questions.\'',
+                image: '/images/ernest-resized.JPG'
             }];
             this.fields = [
                 {

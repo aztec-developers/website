@@ -1,11 +1,26 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../containers/column-container.html">
 <link rel="import" href="small-card.html">
+<link rel="import" href="big-card.html">
 <link rel="import" href="../../bower_components/paper-card/paper-card.html">
 <link rel="import" href="../../bower_components/paper-styles/typography.html">
 
 <dom-module id="profile-card_no_image">
     <template>
     <style is="custom-style">
+
+    @media (max-width: 990px) {
+        paper-card {
+          height: auto;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        paper-card-content {
+          width: auto;
+          height: 200px;
+        }
+      }
       paper-card {
         width: 350px;
         height: 300px;
@@ -21,14 +36,24 @@
       paper-card p {
         opacity: 0.65;
       }
+      small-card h2, h3, p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      small-card h3 {
+        opacity: 0.85;
+      }
+      small-card p {
+        opacity: 0.65;
+      }
+
     </style>
-        <paper-card elevation=4> 
-          <div class="card-content">
-            <h2> {{profile.name}} </h2>
-            <h3> {{profile.status}} </h3>
-            <p> {{profile.description}} </p>
-          </div>
-        </paper-card>
+        <small-card>
+          <h2>{{profile.name}}</h2>
+          <h3>{{profile.status}}</h3>
+          <p>{{profile.description}}</p>
+        </small-card>
     </template>
     <script>
     Polymer({
