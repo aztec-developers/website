@@ -10,30 +10,10 @@
     <template>
     <style is="custom-style">
 
-      @media screen and (min-width: 300px) and (max-width: 500px) {
-        .landing-content {
-          width: 350px;
-          padding: 4%;
-          margin-left: 20%;
-        }
-        .landing-image {
-          display: none;
-        }
-      }
-
-       paper-card.landing {
-        width: 80%;
-        margin: auto;
-        @apply(--layout-horizontal);
-        overflow:hidden;
-      }
-
-      .landing-image {
-        height: 100%;
-        overflow-x: hidden;
-      }
-      .landing-content {
-        width: 500px;
+      paper-card {
+        --paper-card: {
+          width: 600px;
+        };
       }
       h2 {
         font-size: 35px;
@@ -49,12 +29,11 @@
       p {
         opacity: 0.65;
       }
-      .image-container{
-        width:40%;
-      }
+    
+
     </style>
         <row-container>
-              <paper-card class="landing" elevation=4>
+              <!-- <paper-card class="landing" elevation=4>
                 <div class="landing-content">
                     <div class="card-content">
                         <h2> {{landingFields.title}} </h2>
@@ -64,6 +43,13 @@
                 </div>
                 <div class="image-container">
                 <img src="{{landingFields.image}}" class="landing-image">
+                </div>
+              </paper-card> -->
+              <paper-card image="{{landingFields.image}}" elevation=4>
+                <div class="card-content">
+                  <h2> {{landingFields.title}} </h2>
+                  <h3> {{landingFields.subheader}} </h3>
+                  <p> {{landingFields.blurb}} </p>
                 </div>
               </paper-card>
         </row-container>

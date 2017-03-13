@@ -28,11 +28,18 @@
             }
         }
 
-        small-card h3 {
+        paper-card {
+            --paper-card: {
+                max-width: 400px;
+                
+            };
+        }
+
+        paper-card h3 {
             opacity: 0.86;
         }
 
-        small-card p {
+        paper-card p {
             opacity: 0.65;
         }
         .size {
@@ -41,18 +48,36 @@
         }
         </style>
         <row-container>
-            <small-card class="size size-first">
+            <!-- <small-card class="size size-first">
                 <h2>Portal Plus</h2>
                 <h3>AzDev Project focused on improving SDSU's WebPortal</h3>
                 <p>At San Diego State University we are given two options to plan our class schedules, either through the MyMap, which gives a very generic overview, or through Degree Evaluation, which can be hard to read and isn't interactive. We want to improve the course planning experience here at SDSU which is why AzDev's first project is to create a one stop protal to plan your courses that's easy to use, easy to read, and extremely personalized. PortalPlus is just that, it allows customization, it's personalized and catered to the individual, which is ultimately what a planner should be.</p>
-            </small-card>
-            <small-card class="size">
+            </small-card> -->
+            <paper-card elevation=4>
+                <div class="card-content">
+                    <h2> Portal Plus </h2>
+                    <h3> AzDev Project focused on improving SDSU's WebPortal </h3>
+                    <p>
+                         At San Diego State University we are given two options to plan our class schedules, either through the MyMap, which gives a very generic overview, or through Degree Evaluation, which can be hard to read and isn't interactive. We want to improve the course planning experience here at SDSU which is why AzDev's first project is to create a one stop protal to plan your courses that's easy to use, easy to read, and extremely personalized. PortalPlus is just that, it allows customization, it's personalized and catered to the individual, which is ultimately what a planner should be.
+                    </p>
+                </div>
+            </paper-card>
+            <!-- <small-card class="size">
                 <h2> AzDev Website </h2>
                 <h3>Club website built using the Scaff framework</h3>
                 <p>
                     The website features updates on AzDev's latest projects, current officers, and how to join the club.
                 </p>
-            </small-card>
+            </small-card> -->
+            <paper-card elevation=4>
+                <div class="card-content">
+                    <h2> AzDev Website </h2>
+                    <h3> Club website built using the Scaff framework </h3>
+                    <p>
+                        The website features updates on AzDev's latest projects, current officers, and how to join the club.
+                    </p>
+                </div>
+            </paper-card>
         </row-container>
     </template>
     <script>

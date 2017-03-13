@@ -10,13 +10,13 @@
     <style is="custom-style">
 
       paper-card {
-        --paper-card-header-image: {
-          height: 300px;
-        };
         --paper-card: {
-          width: 350px;
+          
         };
-      }
+        --paper-card-header-image: {
+          max-height: 350px;
+        };
+      }      
 
       .content {
         padding: 4%;
@@ -35,11 +35,11 @@
       }
 
     </style>
-        <paper-card elevation=4>
-          <div class="content">
-            <h2>{{profile.name}}</h2>
-            <h3>{{profile.status}}</h3>
-            <p>{{profile.description}}</p>
+        <paper-card image="{{profile.image}}" elevation=4>
+          <div class="card-content">
+            <h2> {{profile.name}} </h2>
+            <h3> {{profile.status}} </h3>
+            <p> {{profile.description}} </p>
           </div>
         </paper-card>
     </template>
