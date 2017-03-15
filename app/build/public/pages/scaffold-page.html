@@ -8,6 +8,9 @@
 <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
 <link rel="import" href="../bower_components/paper-tabs/paper-tab.html">
 <link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="route-two.html">
 <link rel="import" href="route-one.html">
 <link rel="import" href="manage-users.html">
@@ -62,12 +65,12 @@
         <app-location route="{{route}}"></app-location>
         <app-route route="{{route}}" pattern="/:page" data="{{routeData}}" tail="{{subroute}}"></app-route>
         <paper-toolbar id="nav-bar">
-            <div class="title" id="nav-title">Aztec Developers</div>
+            <div class="title" id="nav-title"> Aztec Developers</div>
             <paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-                <paper-tab name="route-one" link><a href="/route-one">About</a></paper-tab>
-                <paper-tab name="route-two" link><a href="/route-two">Projects</a></paper-tab>
-                <paper-tab name="manage-users" link><a href="/manage-users">Officers</a></paper-tab>
-                <paper-tab name="join-us" link><a href="/join-us">Join Us</a></paper-tab>
+                <paper-tab name="route-one" link> <a href="/route-one"> About &nbsp;<iron-icon icon="icons:home"></iron-icon> </a></paper-tab>
+                <paper-tab name="route-two" link><a href="/route-two">Projects &nbsp;<iron-icon icon="icons:build"></iron-icon> </a></paper-tab>
+                <paper-tab name="manage-users" link><a href="/manage-users">Officers &nbsp;<iron-icon icon="icons:perm-identity"></iron-icon> </a></paper-tab>
+                <paper-tab name="join-us" link><a href="/join-us">Join Us &nbsp;<iron-icon icon="social:group-add"></iron-icon> </a></paper-tab>
             </paper-tabs>
         </paper-toolbar>
         <neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
