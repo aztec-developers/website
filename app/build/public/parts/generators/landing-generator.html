@@ -10,43 +10,9 @@
     <template>
     <style is="custom-style">
 
-      @media(max-width: 500px) {
-        paper-card {
-          --paper-card: {
-            width: 375px;
-          };
-        }
-      }
-      @media(max-width: 450px) {
-        paper-card {
-          --paper-card: {
-            width: 100px;
-          };
-          --paper-card-header-image: {
-            
-          };
-          .row-element {
-            padding: 0;
-          }
-        }
-      }
-      @media(max-width: 320px) {
-        paper-card {
-          --paper-card: {
-            width: 310px;
-          };
-        }
-      }
-      @media(max-width: 1000px) {
-        paper-card {
-          --paper-card: {
-            width: 600px;
-          };
-        }
-      }
       paper-card {
         --paper-card: {
-          width: 700px;
+          max-width: 700px;
         };
       }
       h2 {
@@ -69,29 +35,13 @@
     
 
     </style>
-        <row-container>
-              <!-- <paper-card class="landing" elevation=4>
-                <div class="landing-content">
-                    <div class="card-content">
-                        <h2> {{landingFields.title}} </h2>
-                        <h3> {{landingFields.subheader}} </h3>
-                        <p> {{landingFields.blurb}} </p>
-                    </div>
-                </div>
-                <div class="image-container">
-                <img src="{{landingFields.image}}" class="landing-image">
-                </div>
-              </paper-card> -->
-              <div class="row-element">
-                <paper-card image="{{landingFields.image}}" elevation=4>
-                <div class="card-content">
-                  <h2> {{landingFields.title}} </h2>
-                  <h3> {{landingFields.subheader}} </h3>
-                  <p> {{landingFields.blurb}} </p>
-                </div>
-              </paper-card>
-              </div>
-        </row-container>
+        <paper-card image="{{landingFields.image}}" elevation=4>
+          <div class="card-content">
+            <h2> {{landingFields.title}} </h2>
+            <h3> {{landingFields.subheader}} </h3>
+            <p> {{landingFields.blurb}} </p>
+          </div>
+        </paper-card>
     </template>
     <script>
     Polymer({
