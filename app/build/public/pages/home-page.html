@@ -1,0 +1,31 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/cards/big-card.html">
+<link rel="import" href="../parts/generators/landing-generator.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<dom-module id="home-page">
+    <template>
+        <style is="custom-style">
+    
+        </style>
+        <column-container>
+            <landing-generator class="test" landing-fields={{landingProps}}></landing-generator>
+        </column-container>
+    </template>
+    <script>
+    Polymer({
+        is: 'home-page',
+        ready: function () {
+            this.landingProps = {
+                    id: 'landingpage',
+                    image: '/images/azdevteamphoto.jpg',
+                    title: 'Aztec Developers',
+                    subheader: 'San Diego State University\'s Club For Software Developers',
+                    blurb: "Aztec Developers gives students a taste of software development in the real world. We give club members a project to work on that is decided amongst the majority of student while also giving students the freedom to decide on the parts of projects that they feel would fit best with them.\nClub members are encouraged to and often meet outside of club time in order to further work on projects, by doing this, club members not only get feedback from each other but also strengthen relationships with one another.\n The purpose of Aztec Developers is to give students the opportunity to collaborate with others in order to create a project that is bigger than any individual, by doing this we're able to learn team building skills that can occur at a place of work, or just have fun while also learning new skills in programming and design."
+                }
+        }
+    });
+    </script>
+</dom-module>

@@ -1,0 +1,56 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/paper-styles/typography.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/containers/row-container.html">
+<link rel="import" href="../parts/generators/profile-generator.html">
+<link rel="import" href="../parts/cards/big-card.html">
+<link rel="import" href="../parts/generators/form-generator.html">
+
+<dom-module id="announcements-page">
+
+  <template>
+    <style type="text/css" is="custom-style">
+        .row-element {
+            width: 33.3%;
+        }
+
+        #user-creator{
+            width:100%;
+            margin:2%;
+        }
+
+        #profile-creator {
+            margin-top: 5%;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+      </style>
+
+
+    <row-container>
+      <profile-generator id="profile-creator" profiles={{announcements}}></profile-generator>
+    </row-container>
+
+
+  </template>
+  <script>
+    Polymer({
+      is: 'announcements-page',
+      ready: function() {
+        this.announcements = [
+          {
+            name: 'Club Codeathon',
+            status: 'March 26th, 2017 From 9am-7pm',
+            description: 'Club codeathon to bond before Spring Break and work on the club\s ongoing projects.'
+          }, {
+            name: 'Northrup Grumman Codeathon',
+            status: 'April 7th, 2017 From 4pm to April 8th, 2017 5pm',
+            description: 'Northrup Grumman sponsored codeathon the club will be attending.'
+          }
+        ]
+      }
+    });
+  </script>
+</dom-module>

@@ -1,0 +1,107 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../parts/containers/column-container.html">
+<link rel="import" href="../parts/containers/row-container.html">
+<link rel="import" href="../parts/cards/big-card.html">
+<link rel="import" href="../parts/cards/small-card.html">
+<link rel="import" href="../parts/generators/profile-generator.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-material/paper-material.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<dom-module id="project-page">
+    <template>
+        <style is="custom-style">
+
+        @media(max-width: 500px) {
+            .size {
+                width: 375px;
+                height: 500px;
+            }
+        }
+        @media(max-width: 414px) {
+            .size {
+                width: 300px;
+            }
+        }
+        @media(max-width: 320px) {
+            .size {
+                width: 310px;
+                height: 500px;
+            }
+        }
+
+        paper-card {
+            --paper-card: {
+                max-width: 400px;
+            };
+        }
+
+        img {
+
+        }
+
+        paper-card h3 {
+            opacity: 0.86;
+        }
+
+        paper-card p {
+            opacity: 0.65;
+        }
+        .row-element {
+            padding: 5%;
+        }
+        </style>
+        <row-container>
+            <div class="row-element">
+                <paper-card elevation=4>
+                <div class="card-content">
+                    <h2> Portal Plus </h2>
+                    <h3> AzDev Project focused on improving SDSU's WebPortal </h3>
+                    <p>
+                         At San Diego State University we are given two options to plan our class schedules, either through the MyMap, which gives a very generic overview, or through Degree Evaluation, which can be hard to read and isn't interactive. We want to improve the course planning experience here at SDSU which is why AzDev's first project is to create a one stop protal to plan your courses that's easy to use, easy to read, and extremely personalized. PortalPlus is just that, it allows customization, it's personalized and catered to the individual, which is ultimately what a planner should be.
+                    </p>
+                </div>
+            </paper-card>
+            </div>
+            <div class="row-element">
+                <paper-card elevation=4>
+                <div class="card-content">
+                    <h2> AzDev Website </h2>
+                    <h3> Club website built using the Scaff framework </h3>
+                    <p>
+                        The website features updates on AzDev's latest projects, current officers, and how to join the club.
+                    </p>
+                </div>
+            </paper-card>
+            </div>
+        </row-container>
+        <profile-generator profiles={{tech}}></profile-generator>
+        
+    </template>
+    <script>
+    Polymer({
+        is: 'project-page',
+        ready: function() {
+            this.tech = [
+                {
+                    name: 'Meteor',
+                    status: '',
+                    description: 'Meteor makes up a large majority of our backend. Aztec Developers loves how Meteor is able to blend the backend and frontend together, making communication between the two seemless. Meteor is also able to get your development environment up and running quickly. This means the developers can focus on the product, instead of spending a large amount of time trying to configure the environment. The Meteor CLI also provides easy deployment techniques as well as effortless testing suites.',
+                    image: '/images/meteor-logo.svg'
+                },
+                {
+                    name: 'Angular',
+                    status: '',
+                    description: 'Due to Meteor\'s seemless integration with Angular and TypeScript, Google\'s Angular framework has become Aztec Developer\'s go to framework to leverage for their frontend.',
+                    image: '/images/angular.svg'
+                },
+                {
+                    name: 'Polymer',
+                    status: '',
+                    description: 'Polymer is Google\'s latest JavaScript framework to the hit the streets. What Polymer brings to the table is simplicity. While other frameworks require Webpack or running various Gulp tasks to work, Polymer is able to provide the component structure without any extra tools or configuration. Though still in it\'s early stages, Aztec Developers see the promise of Polymer and have used it to create this very website.',
+                    image: '/images/p-logo.png'
+                }
+            ]
+        }
+    });
+    </script>
+</dom-module>
