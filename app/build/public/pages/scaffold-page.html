@@ -11,8 +11,8 @@
 <link rel="import" href="../bower_components/iron-icon/iron-icon.html">
 <link rel="import" href="../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
-<link rel="import" href="route-two.html">
-<link rel="import" href="route-one.html">
+<link rel="import" href="project-page.html">
+<link rel="import" href="home-page.html">
 <link rel="import" href="manage-users.html">
 <link rel="import" href="join-us.html">
 
@@ -67,15 +67,15 @@
         <paper-toolbar id="nav-bar">
             <div class="title" id="nav-title"> Aztec Developers</div>
             <paper-tabs selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-                <paper-tab name="route-one" link> <a href="/route-one"> <iron-icon icon="icons:home"></iron-icon> </a></paper-tab>
-                <paper-tab name="route-two" link><a href="/route-two"><iron-icon icon="icons:build"></iron-icon> </a></paper-tab>
+                <paper-tab name="home-page" link> <a href="/home-page"> <iron-icon icon="icons:home"></iron-icon> </a></paper-tab>
+                <paper-tab name="project-page" link><a href="/project-page"><iron-icon icon="icons:build"></iron-icon> </a></paper-tab>
                 <paper-tab name="manage-users" link><a href="/manage-users"><iron-icon icon="icons:perm-identity"></iron-icon> </a></paper-tab>
                 <paper-tab name="join-us" link><a href="/join-us"><iron-icon icon="social:group-add"></iron-icon> </a></paper-tab>
             </paper-tabs>
         </paper-toolbar>
         <neon-animated-pages id="pages" class="flex" selected="[[page]]" attr-for-selected="name" role="main" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
-            <route-one name="route-one"></route-one>
-            <route-two name="route-two"></route-two>
+            <home-page name="home-page"></home-page>
+            <project-page name="project-page"></project-page>
             <manage-users name="manage-users"></manage-users>
             <join-us name="join-us"></join-us>
         </neon-animated-pages>
@@ -97,7 +97,7 @@
         ],
 
         _routePageChanged: function(page) {
-            this.page = page || 'route-one';
+            this.page = page || 'home-page';
         },
 
         _pageChanged: function(page) {
