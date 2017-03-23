@@ -4,7 +4,7 @@ Scaff is the scaffolding for your web application. Scaff contains a bunch of eas
 
 ## Developer Notes
 
-###Ideas and Concepts
+### Ideas and Concepts
 
-####Generating Elements
+#### Generating Elements
 I think a large focus of this project should be on generating elements. An element generator is the idea of creating a bunch of elements by passing in a list of objects to a single element. For an example of this see the generators folder located at `app/public/parts/generators`. This is useful because it keeps code terse and allows you to do cool stuff like generate entire forms on the fly very quickly.
